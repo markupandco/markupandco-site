@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Depop Fee Calculator 2026 | $0 Selling Fee, Processing &amp; Boosted Listings | Markup &amp; Co.</title>
+<meta name="description" content="Free Depop fee calculator for US sellers. Depop's selling fee is $0, but you still pay 3.3% + $0.45 payment processing and 12% on boosted listings. See your payout and real profit after shipping and item cost. Current as of November 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://markupandco.com/depop-fee-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Depop Fee Calculator 2026 | Markup &amp; Co.">
+<meta property="og:description" content="What Depop really takes: 3.3% + $0.45 processing, 12% if boosted. Enter a sale and see your payout and profit.">
+<meta property="og:url" content="https://markupandco.com/depop-fee-calculator/">
+<meta property="og:image" content="https://markupandco.com/assets/img/pricing-1.jpg">
+<style>:root{--navy:#1E3A5F;--teal:#2E7D6B;--cream:#F6F3EC;--mint:#9FE3CF;--bg:#F6F3EC;--ink:#1F2933;--muted:#5B6773;--line:#E1E6EC;--card:#ffffff;--accent:#2E7D6B;--accent-ink:#ffffff;--soft:#EAF6F1;--ok:#1f6b4f;--ok-bg:#e6f5ee;--warn:#92400e;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.narrow{max-width:980px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:5;background:rgba(246,243,236,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:800;font-size:20px;color:var(--navy);text-decoration:none;letter-spacing:-.3px}
+.brand span{color:var(--teal)}
+nav.main a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:15px;font-weight:600}
+nav.main a:hover{color:var(--navy)}
+nav.main a.cta{background:var(--navy);color:#fff;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;white-space:nowrap}
+nav.main a.cta:hover{color:#fff}
+@media (max-width:980px){nav.main a:not(.cta){display:none}}
+.hero{padding:36px 0 8px}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-1px;color:var(--navy);margin:0 0 12px}
+.hero p.lede{font-size:18px;color:var(--muted);max-width:720px;margin:0}
+.stamp{display:inline-block;font-size:13px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px;margin-top:12px}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0 8px}
+@media (max-width:760px){.calc{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(30,58,95,.06)}
+.card h2{margin:0 0 12px;font-size:18px;color:var(--navy)}
+label{display:block;font-size:14px;font-weight:600;margin:12px 0 4px}
+label small{font-weight:400;color:var(--muted)}
+.field{position:relative}
+.field .pre{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.field .suf{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+input[type=number],select{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input.money{padding-left:26px}
+input.pct{padding-right:30px}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check{display:flex;align-items:center;gap:8px;font-weight:500;margin-top:14px}
+.check input{width:18px;height:18px}
+.results .big{font-size:34px;font-weight:800;line-height:1.1;margin:4px 0 2px;color:var(--navy)}
+.results .sub{color:var(--muted);font-size:14px}
+.results table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+.results td{padding:7px 0;border-top:1px solid var(--line)}
+.results td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.results tr.total td{font-weight:700}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.warn{background:var(--warn-bg);color:var(--warn)}
+.reverse{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.reverse .out{font-size:22px;font-weight:700}
+.promo{background:var(--navy);color:#fff;border:0;border-radius:14px;padding:18px 20px;margin:24px 0;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.promo p{margin:0;flex:1 1 320px}
+.promo a{color:#fff}
+.promo .btn{background:var(--teal)}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+article{max-width:760px}
+article h2{font-size:26px;color:var(--navy);letter-spacing:-.5px;margin:36px 0 10px}
+article h3{font-size:18px;color:var(--navy);margin:22px 0 6px}
+article p,article li{color:#2e2b26}
+table.fees{width:100%;border-collapse:collapse;margin:12px 0 4px;font-size:15px}
+table.fees th,table.fees td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.fees th{background:#EEF1F5;font-weight:600;color:var(--navy)}
+.example{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;font-size:15px}
+.example b{display:block;margin-bottom:4px}
+details{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 2px}
+.signup{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:28px 0}
+.signup form{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.signup input[type=email]{flex:1 1 220px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.signup button{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 16px;cursor:pointer}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0 30px}
+.related a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink)}
+.related a span{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 40px;font-size:14px;color:var(--muted)}
+footer.site p{margin:6px 0}
+.small{font-size:13px;color:var(--muted)}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"SoftwareApplication","name":"Depop Fee Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","url":"https://markupandco.com/depop-fee-calculator/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Markup & Co.","url":"https://markupandco.com/"},"description":"Free calculator that works out Depop's payment processing and boosted listing fees, the seller payout and net profit for US sellers."},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much does Depop take from a sale in the US?","acceptedAnswer":{"@type":"Answer","text":"Depop charges US sellers no selling fee on listings created since July 15, 2024. You pay a payment processing fee of 3.3% + $0.45 on the total the buyer pays, including shipping and tax. On a $40 item with $5 buyer-paid shipping that is $1.94, so your payout is $43.06."},
+{"@type":"Question","name":"Does Depop charge fees on shipping?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 3.3% + $0.45 processing fee is charged on the full transaction including shipping and any sales tax. If you use a Depop Shipping label, the boosted-listing fee does not apply to shipping; if you ship on your own, it does."},
+{"@type":"Question","name":"What is the Depop boosted listing fee?","acceptedAnswer":{"@type":"Answer","text":"If a boosted listing sells, US and UK sellers pay 12% of the item price (plus shipping if you did not use a Depop label), on top of payment processing. The rate rose from 8% to 12% for new listings from March 23, 2026."},
+{"@type":"Question","name":"Do buyers pay a fee on Depop?","acceptedAnswer":{"@type":"Answer","text":"Depop charges buyers a marketplace fee at checkout. It is paid by the buyer and is not deducted from your payout, but it does raise the total the buyer sees, which can affect what price they are willing to pay."},
+{"@type":"Question","name":"Are Depop fees refunded if I refund the buyer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Depop reverses fees on refunded sales processed through Depop Payments."}
+]}]}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/">Markup <span>&amp;</span> Co.</a>
+  <nav class="main" aria-label="Sections"><a href="/#pricing">Pricing calculators</a><a href="/#reseller">Reseller tools</a><a href="/#tax">Taxes &amp; mileage</a><a href="/#calculators">Free calculators</a><a class="cta" href="https://www.etsy.com/shop/MarkupandCo" target="_blank" rel="noopener">Shop on Etsy</a></nav>
+</div></header>
+
+<main class="narrow">
+<section class="hero">
+  <h1>Depop Fee Calculator</h1>
+  <p class="lede">Depop's "$0 selling fee" is real, but it isn't free. Enter a sale and see the processing fee, the boost fee if you promoted the listing, your payout, and what's left after shipping and what you paid for the item.</p>
+  <span class="stamp">US fee rules current as of November 3, 2026 &middot; checked against Depop's seller fees page</span>
+</section>
+
+<section class="calc" id="calculator">
+  <div class="card">
+    <h2>Your sale</h2>
+    <label for="price">Item price <small>(after any offer you accepted)</small></label>
+    <div class="field"><span class="pre">$</span><input class="money" id="price" type="number" min="0" step="0.01" value="40" inputmode="decimal"></div>
+
+    <div class="row2">
+      <div>
+        <label for="ship">Shipping the buyer paid</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="ship" type="number" min="0" step="0.01" value="5" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="taxrate">Sales tax rate <small>(buyer's)</small></label>
+        <div class="field"><input class="pct" id="taxrate" type="number" min="0" max="20" step="0.01" value="0" inputmode="decimal"><span class="suf">%</span></div>
+      </div>
+    </div>
+
+    <label class="check"><input type="checkbox" id="boost"> This was a boosted listing (12%)</label>
+    <label class="check"><input type="checkbox" id="depoplabel" checked> I shipped with a Depop Shipping label</label>
+
+    <h2 style="margin-top:22px">Your costs <small style="font-weight:400;color:var(--muted)">(optional, for profit)</small></h2>
+    <div class="row2">
+      <div>
+        <label for="label">Shipping label you pay</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="label" type="number" min="0" step="0.01" value="5" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="cogs">What the item cost you</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="cogs" type="number" min="0" step="0.01" value="8" inputmode="decimal"></div>
+      </div>
+    </div>
+    <label for="other">Packaging and other costs</label>
+    <div class="field"><span class="pre">$</span><input class="money" id="other" type="number" min="0" step="0.01" value="0.50" inputmode="decimal"></div>
+  </div>
+
+  <div class="card results" aria-live="polite">
+    <h2>What you get</h2>
+    <div class="sub">Depop payout (before your costs)</div>
+    <div class="big" id="payout">$0.00</div>
+    <div class="sub" id="effrate">Total Depop fees: $0.00 (0.0% of the item price)</div>
+    <table>
+      <tr><td>Item price</td><td id="o_price">$0.00</td></tr>
+      <tr><td>+ Buyer-paid shipping</td><td id="o_ship">$0.00</td></tr>
+      <tr><td>Sales tax collected <span class="small">(remitted by Depop)</span></td><td id="o_tax">$0.00</td></tr>
+      <tr><td>&minus; Selling fee</td><td id="o_sell">$0.00</td></tr>
+      <tr><td>&minus; Processing 3.3% + $0.45 <span class="small">(on price + shipping + tax)</span></td><td id="o_proc">$0.00</td></tr>
+      <tr><td>&minus; Boosted listing fee <span id="o_boost_note" class="small"></span></td><td id="o_boost">$0.00</td></tr>
+      <tr class="total"><td>Payout to you</td><td id="o_payout">$0.00</td></tr>
+      <tr><td>&minus; Shipping label</td><td id="o_label">$0.00</td></tr>
+      <tr><td>&minus; Item cost + other costs</td><td id="o_cost">$0.00</td></tr>
+      <tr class="total"><td>Net profit</td><td id="o_profit">$0.00</td></tr>
+      <tr><td>Margin / ROI</td><td id="o_margin">&ndash;</td></tr>
+    </table>
+    <p style="margin:12px 0 0"><span class="pill ok" id="verdict">Profitable</span></p>
+
+    <div class="reverse">
+      <label for="target">Reverse it: what should I list at to net</label>
+      <div class="row2" style="align-items:end">
+        <div class="field"><span class="pre">$</span><input class="money" id="target" type="number" min="0" step="0.01" value="20" inputmode="decimal"></div>
+        <div class="out" id="needprice">$0.00</div>
+      </div>
+      <p class="small">Uses the shipping, costs and boost setting above. Leave room for offers: most Depop sales close 10&ndash;20% under the list price.</p>
+    </div>
+  </div>
+</section>
+
+<div class="promo">
+  <p><strong>Selling on more than Depop?</strong> The Reseller Inventory &amp; Profit Tracker does this math on every sale, for Depop, eBay, Poshmark, Mercari, Whatnot, Facebook Marketplace and Etsy, and rolls it up into a dashboard and a tax-year summary.</p>
+  <a class="btn" href="https://www.etsy.com/listing/4609100660/reseller-inventory-profit-tracker" rel="noopener">See the tracker on Etsy &middot; $14.99</a>
+</div>
+
+<article>
+<h2>Depop seller fees in 2026 (US)</h2>
+<p>Depop dropped its 10% selling fee for US sellers in July 2024 and raised the price of boosting in March 2026. Here is the full picture for a US seller paid through Depop Payments.</p>
+<table class="fees">
+<tr><th>Fee</th><th>Rate</th><th>Charged on</th></tr>
+<tr><td>Selling fee</td><td>$0</td><td>US listings created on or after July 15, 2024 (UK: March 20, 2024). Sellers outside the US and UK still pay 10%.</td></tr>
+<tr><td>Payment processing (Depop Payments)</td><td>3.3% + $0.45</td><td>Item price + shipping + applicable sales tax. Charged once per order, so a bundle pays the $0.45 once.</td></tr>
+<tr><td>Boosted Listings</td><td>12%</td><td>Only if the boosted listing sells. Item price excluding tax, plus shipping if you did not use a Depop Shipping label. Listings boosted before March 23, 2026 stay at the old 8%.</td></tr>
+<tr><td>Buyer marketplace fee</td><td>Paid by the buyer</td><td>Added at checkout; not deducted from your payout.</td></tr>
+<tr><td>Listing fee, monthly fee</td><td>$0</td><td>&ndash;</td></tr>
+<tr><td>Refunds</td><td>Fees reversed</td><td>Processing and boost fees come back when a Depop Payments sale is refunded.</td></tr>
+</table>
+<p class="small">Source: Depop Help, "Seller fees and charges," read November 3, 2026. UK sellers pay 2.9% + £0.30 processing; Australia 2.6% + A$0.30.</p>
+
+<h3>Why "no selling fee" still costs 5&ndash;10%</h3>
+<p><strong>The $0.45 is the whole story on cheap items.</strong> On a $10 tee with $4.50 shipping, processing is 3.3% of $14.50 plus $0.45 = $0.93. That is 9.3% of the item price. On a $5 item it is over 12%. If most of what you sell is under $15, the flat fee matters more than the percentage, and bundles (one $0.45 for the whole order) are your best friend.</p>
+<p><strong>Processing is charged on shipping and tax.</strong> You pass shipping through to the buyer, but Depop still takes 3.3% of it. Offering "free shipping" by folding the label into the price doesn't change the fee; it just changes which line it shows up on.</p>
+<p><strong>Boosting doubles your fees on small items and more than triples them on big ones.</strong> A boosted $75 dress with $6 shipping pays $3.12 processing plus $9.00 boost. Boost only when an item has sat for a while and you'd rather take 12% less than keep it. On a $40 item the boost costs $4.80, so think of it as a $4.80 ad that you only pay if it works.</p>
+
+<h3>Worked examples</h3>
+<div class="example"><b>$40 hoodie, $5 buyer-paid shipping, not boosted, Depop label</b>
+Processing 3.3% &times; $45 + $0.45 = $1.94. Payout $45 &minus; $1.94 = <strong>$43.06</strong>. Label $5, item cost $8, packaging $0.50: net profit $29.56, a 65.7% margin on the $45 the buyer paid.</div>
+<div class="example"><b>Same hoodie, boosted</b>
+Add 12% &times; $40 = $4.80. Payout <strong>$38.26</strong>, net profit $24.76. The boost cost you $4.80 of the $29.56.</div>
+<div class="example"><b>$12 vintage tee, $4.50 shipping, 8.25% tax, you ship yourself, boosted</b>
+Tax $0.99. Processing 3.3% &times; $17.49 + $0.45 = $1.03. Boost 12% &times; ($12 + $4.50) = $1.98 because no Depop label. Payout $16.50 &minus; $3.01 = <strong>$13.49</strong>.</div>
+
+<h3>How Depop compares</h3>
+<p>On a $40 item with $5 buyer-paid shipping: Depop keeps $1.94 (4.9% of the item), Mercari charges the buyer its service fee and sellers pay processing, eBay's standard final value fee would be about $6.42 (13.6% of $45 + $0.30), Poshmark takes $8.00 (20%), and Whatnot keeps $4.81 (8% + 2.9% + $0.30; try the <a href="/whatnot-fee-calculator/">Whatnot fee calculator</a>). For clothing under $50, Depop is the cheapest of the big US apps as long as you don't boost.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How much does Depop take from a sale in the US?</summary><p>No selling fee. You pay 3.3% + $0.45 processing on the total the buyer pays, including shipping and tax. A $40 item with $5 shipping costs $1.94 in fees, so you receive $43.06.</p></details>
+<details><summary>Does Depop charge fees on shipping?</summary><p>Yes, processing is charged on shipping and tax. The boost fee also includes shipping if you ship on your own instead of using a Depop Shipping label.</p></details>
+<details><summary>What is the boosted listing fee?</summary><p>12% of the item price (plus shipping without a Depop label) if the boosted listing sells, on top of processing. It went from 8% to 12% for new listings on March 23, 2026.</p></details>
+<details><summary>Do buyers pay a fee?</summary><p>Yes, Depop adds a marketplace fee at checkout. It isn't taken out of your payout, but it does raise the buyer's total, which is worth remembering when you price.</p></details>
+<details><summary>What if I use PayPal instead of Depop Payments?</summary><p>US sellers are paid through Depop Payments. PayPal applies to sellers outside the US and UK, who pay the 10% selling fee plus PayPal's own processing fee.</p></details>
+<details><summary>When does Depop pay out?</summary><p>For tracked US orders Depop releases funds about two working days after delivery; untracked orders after about ten working days. Your bank may add a couple of days.</p></details>
+<details><summary>Do I owe tax on Depop sales?</summary><p>Depop collects and remits sales tax from buyers. Your selling income is still reportable, and Depop issues a 1099-K once you cross the federal threshold. Keeping fees, item costs and mileage in one place makes that painless; that is what the <a href="https://www.etsy.com/listing/4609100660/reseller-inventory-profit-tracker" rel="noopener">Reseller Tracker</a> is for. This page is not tax advice.</p></details>
+
+<div class="signup">
+  <strong>Get an email when Depop or Whatnot change their fees.</strong>
+  <p class="small" style="margin:4px 0 0">One short note per change, nothing else. Unsubscribe any time.</p>
+  <form name="fee-updates" method="POST" data-netlify="true" netlify-honeypot="website" action="/thanks/">
+    <input type="hidden" name="form-name" value="fee-updates">
+    <input type="hidden" name="source" value="depop-fee-calculator">
+    <p style="display:none"><label>Website <input name="website"></label></p>
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Notify me</button>
+  </form>
+</div>
+
+<h2>More free calculators</h2>
+<div class="related">
+  <a href="/whatnot-fee-calculator/">Whatnot fee calculator<span>8% commission, 2.9% + $0.30 processing, live-show payouts</span></a>
+  <a href="/#reseller">Reseller Inventory &amp; Profit Tracker<span>Every platform's fees, a dashboard and a tax-year summary</span></a>
+  <a href="/#pricing">Pricing calculators for makers<span>Bakery, candles, laser, apparel, 3D printing</span></a>
+</div>
+</article>
+</main>
+
+<footer class="site"><div class="narrow">
+  <p><a href="https://www.etsy.com/shop/MarkupandCo" target="_blank" rel="noopener">Markup &amp; Co. on Etsy</a> &middot; <a href="/">Templates</a> &middot; <a href="/#calculators">Free calculators</a> &middot; <a href="/audit/">Website health audits</a></p>
+  <p>This calculator is an estimate based on Depop's published US seller fees as of November 2026. Depop can change fees or run promotions, so check your sales receipts for exact numbers. Nothing here is tax, legal or financial advice. Markup &amp; Co. is not affiliated with Depop.</p>
+  <p>Built by Markup &amp; Co. with the help of AI tools. Every formula is tested before release.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var fmt=function(n){return (n<0?'-$':'$')+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})};
+  var r2=function(n){return Math.round(n*100)/100};
+  var num=function(id){var v=parseFloat($(id).value);return isNaN(v)?0:v};
+  var PROC=0.033, FIXED=0.45, BOOST=0.12;
+  function calc(){
+    var price=num('price'), ship=num('ship'), tr=num('taxrate')/100;
+    var tax=price*tr;
+    var boosted=$('boost').checked, dl=$('depoplabel').checked;
+    var proc=r2((price+ship+tax)>0 ? (price+ship+tax)*PROC+FIXED : 0);
+    var boostBase = boosted ? price + (dl?0:ship) : 0;
+    var boost=r2(boostBase*BOOST);
+    var payout=price+ship-proc-boost;
+    var label=num('label'), cost=num('cogs')+num('other');
+    var profit=payout-label-cost;
+    var fees=proc+boost;
+    $('payout').textContent=fmt(payout);
+    $('effrate').textContent='Total Depop fees: '+fmt(fees)+(price>0?' ('+(fees/price*100).toFixed(1)+'% of the item price)':'');
+    $('o_price').textContent=fmt(price); $('o_ship').textContent=fmt(ship); $('o_tax').textContent=fmt(tax);
+    $('o_sell').textContent='$0.00';
+    $('o_proc').textContent='-'+fmt(proc);
+    $('o_boost').textContent=boosted?'-'+fmt(boost):'$0.00';
+    $('o_boost_note').textContent=boosted?(dl?'(12% of item price)':'(12% of item + shipping, no Depop label)'):'(not boosted)';
+    $('o_payout').textContent=fmt(payout);
+    $('o_label').textContent='-'+fmt(label); $('o_cost').textContent='-'+fmt(cost);
+    $('o_profit').textContent=fmt(profit);
+    $('o_margin').textContent=(price+ship>0?(profit/(price+ship)*100).toFixed(1)+'% margin':'–')+(cost>0?' / '+(profit/cost*100).toFixed(0)+'% ROI':'');
+    var v=$('verdict'); if(profit>0){v.className='pill ok';v.textContent='Profitable: '+fmt(profit)+' after everything'}else{v.className='pill warn';v.textContent=profit===0?'Break even':'Loses '+fmt(-profit)+' on this sale'}
+    var target=num('target');
+    var b = boosted?BOOST:0;
+    var denom=1-PROC*(1+tr)-b;
+    var need=(target+label+cost+FIXED+PROC*ship-ship+(boosted&&!dl?b*ship:0))/denom;
+    $('needprice').textContent = denom>0&&need>0 ? fmt(Math.ceil(need*100)/100) : '–';
+  }
+  ['price','ship','taxrate','boost','depoplabel','label','cogs','other','target'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  calc();
+})();
+</script>
+</body>
+</html>

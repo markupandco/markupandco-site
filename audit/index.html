@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://markupandco.com/audit/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markup & Co. — Website Health Audit</title>
+<meta name="description" content="Get a plain-English website health audit — technical issues, search visibility, and competitor comparison, delivered by email in 2-3 business days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EDEFEA;
+    --paper-card: #E4E7DE;
+    --paper-card-2: #F5F6F1;
+    --ink: #1E2A22;
+    --ink-soft: #4B554C;
+    --ink-faint: #5F665D;
+    --red: #B23A2E;
+    --red-soft: #E7D3CE;
+    --green: #2F6B4A;
+    --rule: #C7CBBE;
+    --max: 1040px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{
+    font-family: 'Zilla Slab', serif;
+    margin: 0 0 0.4em 0;
+    letter-spacing: -0.01em;
+  }
+  .mono{ font-family: 'IBM Plex Mono', monospace; }
+  a{ color: inherit; }
+  :focus-visible{
+    outline: 2px solid var(--red);
+    outline-offset: 3px;
+  }
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- header ---------- */
+  header.site{
+    border-bottom: 1px solid var(--rule);
+  }
+  .header-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 22px 24px;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+  .mark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--ink-soft);
+  }
+  .mark .tab{
+    display:inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 5px 9px;
+    letter-spacing: 0.08em;
+    font-weight:500;
+  }
+  .header-row nav a{
+    text-decoration:none;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color: var(--ink-soft);
+    margin-left: 22px;
+  }
+  .header-row nav a:hover{ color: var(--red); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding: 56px 0 40px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 48px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--red);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px; height:8px;
+    background: var(--red);
+    border-radius:50%;
+    display:inline-block;
+  }
+  .hero h1{
+    font-size: clamp(30px, 4.4vw, 46px);
+    font-weight:600;
+    color: var(--ink);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color: var(--red);
+  }
+  .hero p.lede{
+    font-size:17px;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 18px 0 28px;
+  }
+  .cta-row{ display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    letter-spacing:0.03em;
+    text-decoration:none;
+    padding: 13px 22px;
+    display:inline-block;
+    border: 1px solid var(--ink);
+    transition: background .15s ease, color .15s ease;
+  }
+  .btn-solid{
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-solid:hover{ background: var(--red); border-color: var(--red); }
+  .btn-ghost{
+    color: var(--ink);
+  }
+  .btn-ghost:hover{ border-color: var(--red); color: var(--red); }
+  .price-hint{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- mockup (signature element) ---------- */
+  .mockup-frame{
+    position:relative;
+  }
+  .stamp{
+    position:absolute;
+    top:-14px;
+    right:8px;
+    width:92px;
+    height:92px;
+    border:2.5px solid var(--red);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transform: rotate(-11deg);
+    color: var(--red);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.09em;
+    line-height:1.3;
+    background: var(--paper);
+    z-index:3;
+  }
+  svg.diagram{ width:100%; height:auto; display:block; }
+
+  @media (prefers-reduced-motion: no-preference){
+    .anno{ opacity: 0; animation: fadeUp .5s ease forwards; }
+    .anno1{ animation-delay: .25s; }
+    .anno2{ animation-delay: .55s; }
+    .anno3{ animation-delay: .85s; }
+    @keyframes fadeUp{
+      from{ opacity:0; transform: translateY(4px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
+  }
+
+  /* ---------- what's inside ---------- */
+  section.findings{ padding: 50px 0; border-top: 1px solid var(--rule); }
+  .section-head{ margin-bottom: 30px; max-width: 60ch; }
+  .section-head .eyebrow{ color: var(--ink-soft); }
+  .section-head .eyebrow::before{ background: var(--ink-soft); }
+  .finding-list{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .finding{
+    background: var(--paper-card-2);
+    padding: 24px;
+    display:flex;
+    gap:14px;
+  }
+  .finding .tick{
+    flex-shrink:0;
+    width:22px; height:22px;
+    border:1.5px solid var(--green);
+    color: var(--green);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px;
+    margin-top:2px;
+  }
+  .finding h3{ font-size:17px; margin-bottom:6px; }
+  .finding p{ margin:0; color: var(--ink-soft); font-size:14.5px; }
+
+  /* ---------- how it works ---------- */
+  section.steps{ padding: 50px 0; border-top: 1px solid var(--rule); }
+  .steps-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .step .num{
+    font-family:'IBM Plex Mono', monospace;
+    color: var(--ink-faint);
+    font-size:13px;
+    letter-spacing:0.1em;
+    margin-bottom:10px;
+    display:block;
+  }
+  .step h3{ font-size:18px; }
+  .step p{ color: var(--ink-soft); font-size:14.5px; margin:0; }
+
+  /* ---------- pricing ---------- */
+  /* ---------- about / human note ---------- */
+  section.about{ padding: 8px 0 42px; }
+  .note-card{
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--paper-card-2);
+    border: 1px solid var(--rule);
+    padding: 26px 30px 22px;
+    transform: rotate(-0.6deg);
+  }
+  .note-pin{
+    position: absolute;
+    top: -9px; left: 28px;
+    width: 16px; height: 16px;
+    background: var(--red);
+    border-radius: 50%;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+  }
+  .note-text{
+    font-family: 'Kalam', cursive;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+  .note-sign{
+    font-family: 'Kalam', cursive;
+    font-size: 17px;
+    color: var(--ink-soft);
+    text-align: right;
+  }
+
+  section.pricing{ padding: 50px 0; border-top: 1px solid var(--rule); }
+  .price-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .price-card{
+    border: 1px solid var(--rule);
+    background: var(--paper-card-2);
+    padding: 28px;
+  }
+  .price-card.featured{ border-color: var(--ink); }
+  .price-card .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color: var(--ink-faint);
+  }
+  .price-card .amount{
+    font-family:'Zilla Slab', serif;
+    font-size:38px;
+    font-weight:600;
+    margin: 8px 0 14px;
+  }
+  .price-card ul{
+    margin:0; padding:0 0 0 18px;
+    color: var(--ink-soft);
+    font-size:14.5px;
+  }
+  .price-card li{ margin-bottom:6px; }
+  .pricing-note{
+    margin: 18px 0 0;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    max-width: 56ch;
+  }
+  .guarantee{
+    display:flex; align-items:center; gap:10px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--paper-card-2);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--green);
+    font-size: 13.5px;
+    color: var(--ink);
+    max-width: 56ch;
+  }
+  .guarantee-icon{
+    color: var(--green);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* ---------- form ---------- */
+  /* ---------- faq ---------- */
+  section.faq{ padding: 50px 0; border-top: 1px solid var(--rule); }
+  .faq-list{ display:flex; flex-direction:column; gap: 22px; max-width: 66ch; }
+  .faq-item h3{ font-size: 16px; margin-bottom: 5px; }
+  .faq-item p{ margin:0; color: var(--ink-soft); font-size: 14.5px; }
+
+  section.intake{
+    padding: 56px 0 72px;
+    border-top: 1px solid var(--rule);
+  }
+  .intake-grid{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 48px;
+  }
+  .intake-note h2{ font-size: 26px; }
+  .intake-note p{ color: var(--ink-soft); font-size:15px; max-width:40ch; }
+  .form-card{
+    background: var(--paper-card-2);
+    border: 1px solid var(--rule);
+    padding: 28px;
+  }
+  .field{ margin-bottom: 18px; }
+  .field label{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .field input, .field textarea, .field select{
+    width:100%;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: 11px 12px;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:14.5px;
+    color: var(--ink);
+  }
+  .field textarea{ resize: vertical; min-height: 84px; }
+  .field input:focus, .field textarea:focus, .field select:focus{
+    outline: 2px solid var(--red);
+    outline-offset: 1px;
+    border-color: var(--red);
+  }
+  .form-foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 16px;
+    flex-wrap:wrap;
+    margin-top: 22px;
+  }
+  .form-note{ font-size:12.5px; color: var(--ink-faint); max-width:32ch; }
+  .status-msg{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color: var(--green);
+    margin-top:12px;
+    display:none;
+  }
+  .status-msg.show{ display:block; }
+  .status-msg.err{ color: var(--red); }
+
+  footer{
+    border-top: 1px solid var(--rule);
+    padding: 24px 0 40px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .finding-list{ grid-template-columns: 1fr; }
+    .steps-grid{ grid-template-columns: 1fr; }
+    .price-grid{ grid-template-columns: 1fr; }
+    .intake-grid{ grid-template-columns: 1fr; }
+    .stamp{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="header-row">
+    <div class="mark"><span class="tab">FILE 001</span> Markup &amp; Co.</div>
+    <nav>
+      <a href="#findings">What's inside</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#intake">Request an audit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Case file · Website diagnostic</div>
+      <h1>Your website has a list of problems. <em>Nobody's told you what's on it.</em></h1>
+      <p class="lede">Send me your URL. I'll run it through the same checks a paid SEO consultant uses, then send back a plain-English report on what's actually costing you visitors and search rankings — no jargon, no upsell.</p>
+      <div class="cta-row">
+        <a href="#intake" class="btn btn-solid">Request your audit</a>
+        <a href="sample-report.pdf" class="btn btn-ghost" target="_blank">See a real sample report</a>
+      </div>
+      <p class="price-hint" style="margin-top:18px;">Reports start at $75 · delivered by email in 2–3 business days</p>
+    </div>
+
+    <div class="mockup-frame">
+      <div class="stamp">FINDINGS<br>ATTACHED</div>
+      <svg class="diagram" viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mockupTitle">
+        <title id="mockupTitle">A mocked-up webpage with red annotations circling a slow load time, a missing meta description, and a broken image, the way an audit report marks up a site.</title>
+
+        <!-- browser chrome -->
+        <rect x="0" y="0" width="520" height="400" fill="#F5F6F1" stroke="#C7CBBE"/>
+        <rect x="0" y="0" width="520" height="34" fill="#E4E7DE" stroke="#C7CBBE"/>
+        <circle cx="18" cy="17" r="5" fill="#C7CBBE"/>
+        <circle cx="35" cy="17" r="5" fill="#C7CBBE"/>
+        <circle cx="52" cy="17" r="5" fill="#C7CBBE"/>
+        <rect x="76" y="9" width="330" height="16" rx="2" fill="#EDEFEA" stroke="#C7CBBE"/>
+        <text x="86" y="21" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8A9188">yoursite.com</text>
+
+        <!-- page content -->
+        <rect x="24" y="56" width="140" height="14" fill="#1E2A22" opacity="0.85"/>
+        <rect x="24" y="86" width="472" height="70" fill="#E4E7DE"/>
+        <rect x="24" y="170" width="300" height="10" fill="#C7CBBE"/>
+        <rect x="24" y="188" width="340" height="10" fill="#C7CBBE"/>
+        <rect x="24" y="206" width="220" height="10" fill="#C7CBBE"/>
+        <rect x="24" y="234" width="120" height="30" fill="#1E2A22" opacity="0.85"/>
+        <rect x="300" y="180" width="0" height="0"/>
+        <!-- broken image icon -->
+        <rect x="360" y="170" width="80" height="60" fill="#F5F6F1" stroke="#C7CBBE" stroke-dasharray="4 3"/>
+        <path d="M372 220 L388 198 L400 212 L412 190 L428 220 Z" fill="none" stroke="#C7CBBE" stroke-width="2"/>
+
+        <!-- annotations -->
+        <g class="anno anno1">
+          <ellipse cx="94" cy="249" rx="76" ry="22" fill="none" stroke="#B23A2E" stroke-width="2"/>
+          <line x1="170" y1="240" x2="230" y2="222" stroke="#B23A2E" stroke-width="1.4"/>
+          <text x="232" y="220" font-family="IBM Plex Mono, monospace" font-size="11" fill="#B23A2E">3.8s load — too slow</text>
+        </g>
+
+        <g class="anno anno2">
+          <rect x="70" y="8" width="290" height="18" fill="none" stroke="#B23A2E" stroke-width="2"/>
+          <line x1="360" y1="17" x2="400" y2="46" stroke="#B23A2E" stroke-width="1.4"/>
+          <text x="330" y="60" font-family="IBM Plex Mono, monospace" font-size="11" fill="#B23A2E">meta description missing</text>
+        </g>
+
+        <g class="anno anno3">
+          <rect x="356" y="166" width="88" height="68" fill="none" stroke="#B23A2E" stroke-width="2"/>
+          <line x1="356" y1="200" x2="300" y2="280" stroke="#B23A2E" stroke-width="1.4"/>
+          <text x="180" y="296" font-family="IBM Plex Mono, monospace" font-size="11" fill="#B23A2E">broken image, no alt text</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="findings" id="findings">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What's inside the report</div>
+      <h2>Four things you'll know by Friday that you don't know today.</h2>
+    </div>
+    <div class="finding-list">
+      <div class="finding">
+        <span class="tick">&#10003;</span>
+        <div>
+          <h3>Technical health</h3>
+          <p>Page speed, mobile usability, broken links, and the errors search engines actually penalize you for.</p>
+        </div>
+      </div>
+      <div class="finding">
+        <span class="tick">&#10003;</span>
+        <div>
+          <h3>Search visibility</h3>
+          <p>Where you show up, where you don't, and which pages are invisible to Google entirely.</p>
+        </div>
+      </div>
+      <div class="finding">
+        <span class="tick">&#10003;</span>
+        <div>
+          <h3>Competitor comparison</h3>
+          <p>What two or three competitors are doing differently — and which of it is worth copying.</p>
+        </div>
+      </div>
+      <div class="finding">
+        <span class="tick">&#10003;</span>
+        <div>
+          <h3>Plain-English fix list</h3>
+          <p>A prioritized list of what to fix first, written for a business owner, not a developer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2>Three steps, entirely over email.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <span class="num mono">01</span>
+        <h3>Send your URL</h3>
+        <p>Fill out the form below with your site and what's on your mind. No call required.</p>
+      </div>
+      <div class="step">
+        <span class="num mono">02</span>
+        <h3>I run the diagnostic</h3>
+        <p>I check your site's technical health, search visibility, and how you compare to competitors.</p>
+      </div>
+      <div class="step">
+        <span class="num mono">03</span>
+        <h3>You get the report</h3>
+        <p>A clear PDF lands in your inbox in 2–3 business days, ready to act on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="note-card">
+      <div class="note-pin"></div>
+      <p class="note-text">Hi, I'm Chris Kedroski — I run Markup &amp; Co. myself. No agency, no account manager, no outsourced writer. You send me your site, I personally run the diagnostic, and I write the plain-English part myself. If something in your report doesn't make sense, just reply to the email — you'll get me, not a support queue.</p>
+      <div class="note-sign">— Chris Kedroski, founder</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pricing</div>
+      <h2>Two ways to start.</h2>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="tag">Basic audit</div>
+        <div class="amount">$75</div>
+        <ul>
+          <li>Technical health check</li>
+          <li>Search visibility summary</li>
+          <li>Plain-English fix list</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="tag">Audit + competitors</div>
+        <div class="amount">$150</div>
+        <ul>
+          <li>Everything in the basic audit</li>
+          <li>Side-by-side comparison with 2–3 competitors</li>
+          <li>Priority delivery</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="tag">Extended comparison</div>
+        <div class="amount">$200</div>
+        <ul>
+          <li>Everything in Audit + Competitors</li>
+          <li>Side-by-side comparison with up to 5 competitors</li>
+          <li>2-day delivery</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pricing-note">Payment isn't collected automatically — after you submit the form below, I'll review your site and follow up by email with next steps (including a secure payment link) before any work begins.</p>
+    <div class="guarantee">
+      <span class="guarantee-icon">&#10003;</span>
+      <span>Not happy with your report for any reason? Full refund, no questions asked.</span>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Questions</div>
+      <h2>Before you send your site over.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>How is this different from a free online tool?</h3>
+        <p>Free tools give you raw scores and a wall of jargon. I run the same underlying checks, then write the plain-English version — what actually matters, what to ignore, and what to fix first — so you're not left guessing what any of it means.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my website's data safe?</h3>
+        <p>I only look at what's already publicly visible on your site — the same information anyone gets by visiting it, or that Google itself sees. No login, password, or site access is ever needed for the audit.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if you don't find anything wrong?</h3>
+        <p>In practice, every real site I've audited has had at least something worth fixing. But if your report doesn't turn up anything useful, you get a full refund — no argument, no fine print.</p>
+      </div>
+      <div class="faq-item">
+        <h3>I'm not technical — will I understand the report?</h3>
+        <p>Yes. That's the whole point. Every finding is explained in plain English first. If you do have a developer, there's a separate technical section formatted for them too.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does it take?</h3>
+        <p>2-3 business days from when payment goes through to when your report lands in your inbox.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="intake" id="intake">
+  <div class="wrap intake-grid">
+    <div class="intake-note">
+      <div class="eyebrow">Request an audit</div>
+      <h2>Tell me about your site.</h2>
+      <p>Fill this out and it sends straight through — no email app to open, no account to create.</p>
+    </div>
+    <form class="form-card" id="auditForm" name="audit-request" method="POST" data-netlify="true" netlify-honeypot="company">
+      <input type="hidden" name="form-name" value="audit-request">
+      <p style="position:absolute; left:-9999px;">
+        <label>Leave this blank: <input name="company" tabindex="-1" autocomplete="off"></label>
+      </p>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="url">Website URL</label>
+        <input type="text" id="url" name="url" placeholder="yoursite.com" required>
+      </div>
+      <div class="field">
+        <label for="platform">What's your site built on? (optional)</label>
+        <select id="platform" name="platform">
+          <option value="">Not sure / other</option>
+          <option value="WordPress">WordPress</option>
+          <option value="Squarespace">Squarespace</option>
+          <option value="Wix">Wix</option>
+          <option value="Shopify">Shopify</option>
+          <option value="Custom-built">Custom-built / other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="notes">What's bugging you about your site? (optional)</label>
+        <textarea id="notes" name="notes" placeholder="e.g. traffic dropped last month, not sure why we don't show up on Google..."></textarea>
+      </div>
+      <div class="form-foot">
+        <button type="submit" class="btn btn-solid" id="submitBtn" style="cursor:pointer;">Send request</button>
+        <span class="form-note">Sends straight through — no email app required.</span>
+      </div>
+      <div class="status-msg" id="statusMsg">Thanks — your request is in. You'll hear back within 2–3 business days.</div>
+      <div class="status-msg err" id="errorMsg">Something went wrong sending that — mind trying again in a moment?</div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">FILE 001 · Markup &amp; Co. — website health audits, delivered by email. · <a href="/">Spreadsheet templates</a></div>
+</footer>
+
+<script>
+  const form = document.getElementById('auditForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const statusMsg = document.getElementById('statusMsg');
+  const errorMsg = document.getElementById('errorMsg');
+
+  function encodeForm(data){
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    statusMsg.classList.remove('show');
+    errorMsg.classList.remove('show');
+    submitBtn.disabled = true;
+
+    const payload = {
+      'form-name': 'audit-request',
+      name: document.getElementById('name').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      url: document.getElementById('url').value.trim(),
+      platform: document.getElementById('platform').value,
+      notes: document.getElementById('notes').value.trim(),
+      company: document.querySelector('input[name="company"]').value // honeypot, should stay blank
+    };
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodeForm(payload)
+    })
+      .then(() => {
+        statusMsg.classList.add('show');
+        form.reset();
+      })
+      .catch(() => {
+        errorMsg.classList.add('show');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
+  });
+</script>
+
+</body>
+</html>
