@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Candle Cost &amp; Pricing Calculator 2026 | Cost per Candle, Fragrance Load, Etsy Price | Markup &amp; Co.</title>
+<meta name="description" content="Free candle pricing calculator. Enter your wax, fragrance oil, jar, wick and labor and get the true cost per candle, the wax and fragrance to weigh out, and the price that hits your margin on Etsy or at a market. Current for 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://markupandco.com/candle-pricing-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Candle Cost &amp; Pricing Calculator | Markup &amp; Co.">
+<meta property="og:description" content="What does a candle really cost to make, and what should you charge? Wax, fragrance load, jar, wick, labor and Etsy fees, worked out for you.">
+<meta property="og:url" content="https://markupandco.com/candle-pricing-calculator/">
+<meta property="og:image" content="https://markupandco.com/assets/img/candle-1.jpg">
+<style>:root{--navy:#1E3A5F;--teal:#2E7D6B;--cream:#F6F3EC;--mint:#9FE3CF;--bg:#F6F3EC;--ink:#1F2933;--muted:#5B6773;--line:#E1E6EC;--card:#ffffff;--accent:#2E7D6B;--accent-ink:#ffffff;--soft:#EAF6F1;--ok:#1f6b4f;--ok-bg:#e6f5ee;--warn:#92400e;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.narrow{max-width:980px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:5;background:rgba(246,243,236,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:800;font-size:20px;color:var(--navy);text-decoration:none;letter-spacing:-.3px}
+.brand span{color:var(--teal)}
+nav.main a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:15px;font-weight:600}
+nav.main a:hover{color:var(--navy)}
+nav.main a.cta{background:var(--navy);color:#fff;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;white-space:nowrap}
+nav.main a.cta:hover{color:#fff}
+@media (max-width:980px){nav.main a:not(.cta){display:none}}
+.hero{padding:36px 0 8px}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-1px;color:var(--navy);margin:0 0 12px}
+.hero p.lede{font-size:18px;color:var(--muted);max-width:720px;margin:0}
+.stamp{display:inline-block;font-size:13px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px;margin-top:12px}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0 8px}
+@media (max-width:760px){.calc{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(30,58,95,.06)}
+.card h2{margin:0 0 12px;font-size:18px;color:var(--navy)}
+label{display:block;font-size:14px;font-weight:600;margin:12px 0 4px}
+label small{font-weight:400;color:var(--muted)}
+.field{position:relative}
+.field .pre{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.field .suf{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+input[type=number],select{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input.money{padding-left:26px}
+input.pct{padding-right:30px}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check{display:flex;align-items:center;gap:8px;font-weight:500;margin-top:14px}
+.check input{width:18px;height:18px}
+.results .big{font-size:34px;font-weight:800;line-height:1.1;margin:4px 0 2px;color:var(--navy)}
+.results .sub{color:var(--muted);font-size:14px}
+.results table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+.results td{padding:7px 0;border-top:1px solid var(--line)}
+.results td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.results tr.total td{font-weight:700}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.warn{background:var(--warn-bg);color:var(--warn)}
+.reverse{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.reverse .out{font-size:22px;font-weight:700}
+.promo{background:var(--navy);color:#fff;border:0;border-radius:14px;padding:18px 20px;margin:24px 0;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.promo p{margin:0;flex:1 1 320px}
+.promo a{color:#fff}
+.promo .btn{background:var(--teal)}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+article{max-width:760px}
+article h2{font-size:26px;color:var(--navy);letter-spacing:-.5px;margin:36px 0 10px}
+article h3{font-size:18px;color:var(--navy);margin:22px 0 6px}
+article p,article li{color:#2e2b26}
+table.fees{width:100%;border-collapse:collapse;margin:12px 0 4px;font-size:15px}
+table.fees th,table.fees td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.fees th{background:#EEF1F5;font-weight:600;color:var(--navy)}
+.example{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;font-size:15px}
+.example b{display:block;margin-bottom:4px}
+details{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 2px}
+.signup{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:28px 0}
+.signup form{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.signup input[type=email]{flex:1 1 220px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.signup button{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 16px;cursor:pointer}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0 30px}
+.related a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink)}
+.related a span{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 40px;font-size:14px;color:var(--muted)}
+footer.site p{margin:6px 0}
+.small{font-size:13px;color:var(--muted)}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"SoftwareApplication","name":"Candle Cost & Pricing Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","url":"https://markupandco.com/candle-pricing-calculator/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Markup & Co.","url":"https://markupandco.com/"},"description":"Free calculator for candle makers: cost per candle from wax, fragrance oil, container, wick, labels and labor, the wax and fragrance to weigh out for a batch, and a suggested price at your target margin, including Etsy fees."},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much does it cost to make a candle?","acceptedAnswer":{"@type":"Answer","text":"A typical 8 oz soy container candle costs roughly $4 to $7 to make once you count wax, fragrance oil, the jar, wick, label and your time. Materials alone are often $3 to $4.50; labor and overhead add the rest. Use the calculator with your own supplier prices for an exact number."},
+{"@type":"Question","name":"How do I price handmade candles?","acceptedAnswer":{"@type":"Answer","text":"Work out the full cost per candle (materials with a waste allowance, labor at an hourly rate, and overhead), then divide by one minus your target margin. A $6.06 candle at a 40% margin is $10.10, so $10.49 after rounding up. If you sell on Etsy, add room for its fees: about 9.5% of the price plus $0.45 per order on a non-ad sale."},
+{"@type":"Question","name":"How do I calculate fragrance load?","acceptedAnswer":{"@type":"Answer","text":"Fragrance load is the weight of fragrance oil as a percentage of the wax weight. For an 8 oz fill at an 8% load, divide 8 by 1.08 to get 7.41 oz of wax, then multiply by 0.08 for 0.59 oz of fragrance oil. Most soy waxes take 6% to 10%; check your wax's maximum."},
+{"@type":"Question","name":"What is a good profit margin for candles?","acceptedAnswer":{"@type":"Answer","text":"Many makers aim for 40% to 60% on direct sales and accept 25% to 40% on wholesale, where the retailer doubles your price. Below 30% it is hard to cover fees, packaging, returns and your own time."}
+]}]}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/">Markup <span>&amp;</span> Co.</a>
+  <nav class="main" aria-label="Sections"><a href="/#pricing">Pricing calculators</a><a href="/#reseller">Reseller tools</a><a href="/#tax">Taxes &amp; mileage</a><a href="/#calculators">Free calculators</a><a class="cta" href="https://www.etsy.com/shop/MarkupandCo" target="_blank" rel="noopener">Shop on Etsy</a></nav>
+</div></header>
+
+<main class="narrow">
+<section class="hero">
+  <h1>Candle Cost &amp; Pricing Calculator</h1>
+  <p class="lede">Enter what you pay for wax, fragrance, jars and wicks, plus your time, and see what one candle really costs, the wax and fragrance to weigh out, and the price that hits the margin you want.</p>
+  <span class="stamp">Etsy fee rules current as of November 2026</span>
+</section>
+
+<section class="calc" id="calculator">
+  <div class="card">
+    <h2>Your candle</h2>
+    <div class="row2">
+      <div>
+        <label for="fill">Fill weight per candle <small>(wax + fragrance)</small></label>
+        <div class="field"><input class="pct" id="fill" type="number" min="0" step="0.1" value="8" inputmode="decimal"><span class="suf">oz</span></div>
+      </div>
+      <div>
+        <label for="load">Fragrance load <small>(% of wax weight)</small></label>
+        <div class="field"><input class="pct" id="load" type="number" min="0" max="20" step="0.5" value="8" inputmode="decimal"><span class="suf">%</span></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="batch">Candles per batch</label>
+        <input id="batch" type="number" min="1" step="1" value="12" inputmode="numeric">
+      </div>
+      <div>
+        <label for="waste">Waste allowance <small>(spills, dregs)</small></label>
+        <div class="field"><input class="pct" id="waste" type="number" min="0" max="50" step="1" value="5" inputmode="decimal"><span class="suf">%</span></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:22px">Materials</h2>
+    <div class="row2">
+      <div>
+        <label for="waxprice">Wax: price per bag</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="waxprice" type="number" min="0" step="0.01" value="26" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="waxlb">Bag weight</label>
+        <div class="field"><input class="pct" id="waxlb" type="number" min="0.1" step="0.5" value="10" inputmode="decimal"><span class="suf">lb</span></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="foprice">Fragrance oil: price per bottle</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="foprice" type="number" min="0" step="0.01" value="25" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="fooz">Bottle size</label>
+        <div class="field"><input class="pct" id="fooz" type="number" min="0.1" step="0.5" value="16" inputmode="decimal"><span class="suf">oz</span></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="jar">Jar or tin, each</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="jar" type="number" min="0" step="0.01" value="1.40" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="wick">Wick + sticker, each</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="wick" type="number" min="0" step="0.01" value="0.15" inputmode="decimal"></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="label">Label, lid, box, each</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="label" type="number" min="0" step="0.01" value="0.25" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="dye">Dye, additives, each</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="dye" type="number" min="0" step="0.01" value="0.05" inputmode="decimal"></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:22px">Your time and overhead</h2>
+    <div class="row2">
+      <div>
+        <label for="mins">Hands-on minutes per batch</label>
+        <input id="mins" type="number" min="0" step="5" value="60" inputmode="numeric">
+      </div>
+      <div>
+        <label for="rate">What your hour is worth</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="rate" type="number" min="0" step="1" value="20" inputmode="decimal"></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="overhead">Overhead per candle <small>(tools, tests, insurance)</small></label>
+        <div class="field"><span class="pre">$</span><input class="money" id="overhead" type="number" min="0" step="0.05" value="0.30" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="margin">Target profit margin</label>
+        <div class="field"><input class="pct" id="margin" type="number" min="0" max="90" step="1" value="40" inputmode="decimal"><span class="suf">%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card results" aria-live="polite">
+    <h2>What one candle costs</h2>
+    <div class="big" id="cost">$0.00</div>
+    <div class="sub" id="costsub">materials, labor and overhead</div>
+    <table>
+      <tr><td>Wax <span class="small" id="waxnote"></span></td><td id="o_wax">$0.00</td></tr>
+      <tr><td>Fragrance oil <span class="small" id="fonote"></span></td><td id="o_fo">$0.00</td></tr>
+      <tr><td>Waste allowance on wax + fragrance</td><td id="o_waste">$0.00</td></tr>
+      <tr><td>Jar, wick, label, additives</td><td id="o_hard">$0.00</td></tr>
+      <tr><td>Labor <span class="small" id="labnote"></span></td><td id="o_labor">$0.00</td></tr>
+      <tr><td>Overhead</td><td id="o_oh">$0.00</td></tr>
+      <tr class="total"><td>Cost per candle</td><td id="o_cost">$0.00</td></tr>
+    </table>
+
+    <h2 style="margin-top:22px">What to charge</h2>
+    <table>
+      <tr><td>Direct sale (market, website, cash) at <span id="m1">40%</span> margin</td><td id="o_direct">$0.00</td></tr>
+      <tr><td>On Etsy, same margin after Etsy fees <span class="small">(6.5% + 3% + $0.25 + $0.20)</span></td><td id="o_etsy">$0.00</td></tr>
+      <tr><td>Wholesale (retailer doubles it) at 25% margin</td><td id="o_whole">$0.00</td></tr>
+      <tr><td>Profit per candle at the Etsy price</td><td id="o_profit">$0.00</td></tr>
+      <tr><td>What you earn per hour at the Etsy price</td><td id="o_hour">$0.00</td></tr>
+    </table>
+
+    <h2 style="margin-top:22px">Batch of <span id="bn">12</span>: weigh out</h2>
+    <table>
+      <tr><td>Wax</td><td id="o_bwax">0 oz</td></tr>
+      <tr><td>Fragrance oil</td><td id="o_bfo">0 oz</td></tr>
+      <tr><td>Total pour (incl. waste)</td><td id="o_btot">0 oz</td></tr>
+    </table>
+    <p class="small" id="loadwarn" style="margin-top:10px"></p>
+  </div>
+</section>
+
+<div class="promo">
+  <p><strong>Pricing more than one candle?</strong> The Candle &amp; Soap Pricing Calculator spreadsheet does this for every product and recipe, with wholesale and favor quotes from 1 to 200, ten sales channels side by side, and the sales per month you need to hit your income goal.</p>
+  <a class="btn" href="https://www.etsy.com/listing/4609244718" target="_blank" rel="noopener">See it on Etsy &middot; $9.99</a>
+</div>
+
+<article>
+<h2>How to price a candle in 2026</h2>
+<p>Most candle pricing advice is "materials times two" or "materials times three." That works until you sell at a market for a weekend and realize your weekend was free. The calculator above does it the way a business would: every input costed from what you actually paid, your time at a real hourly rate, a waste allowance because wax ends up on the counter, and then a price that leaves the margin you chose <em>after</em> the platform's cut.</p>
+
+<h3>The fragrance load math</h3>
+<p>Fragrance load is a percentage of the <strong>wax</strong> weight, not of the finished candle. So an 8 oz fill at an 8% load is not 8 oz of wax plus 0.64 oz of oil (that would overflow). It is 8 &divide; 1.08 = <strong>7.41 oz of wax</strong> and 7.41 &times; 0.08 = <strong>0.59 oz of fragrance oil</strong>. The calculator does this for you and gives batch totals to weigh out, with the waste allowance added so you don't come up one candle short.</p>
+<p>Most soy and coconut-soy waxes are rated for 6&ndash;10%; paraffin blends often take 10&ndash;12%. Above the wax's maximum the oil doesn't bind and can pool or sweat, so check your supplier's number before pushing the load up for throw.</p>
+
+<h3>A worked example: 8 oz soy candle</h3>
+<div class="example"><b>Inputs</b>
+Soy wax $26 for 10 lb ($0.1625/oz) &middot; fragrance oil $25 for 16 oz ($1.5625/oz) &middot; 8% load &middot; 5% waste &middot; jar $1.40 &middot; wick $0.15 &middot; label $0.25 &middot; dye $0.05 &middot; 60 minutes per batch of 12 at $20/hr &middot; $0.30 overhead &middot; 40% target margin.</div>
+<div class="example"><b>Cost per candle</b>
+Wax 7.41 oz &times; $0.1625 = $1.20. Fragrance 0.59 oz &times; $1.5625 = $0.93. Waste 5% on those = $0.11. Jar, wick, label, dye = $1.85. Labor 60 min &divide; 12 &times; $20/hr = $1.67. Overhead $0.30. <strong>Total $6.06.</strong></div>
+<div class="example"><b>Prices</b>
+Direct sale at 40% margin: $6.06 &divide; 0.60 = $10.10, rounded to <strong>$10.49</strong>. On Etsy, where a non-ad sale costs 6.5% + 3% of the price plus $0.45, you need <strong>$12.99</strong> to keep the same 40%. Wholesale at 25% margin is $8.49, which a shop would retail around $16.99.</div>
+
+<h3>Four things that quietly eat candle profit</h3>
+<p><strong>The jar.</strong> On an 8 oz candle the vessel is often the single biggest line, bigger than the wax. Buying by the case instead of the dozen typically cuts it 20&ndash;30%, and that drops straight to your margin.</p>
+<p><strong>Etsy's fee on shipping.</strong> Etsy charges its 6.5% transaction fee and 3% processing on the shipping you collect too, not just the item. If you charge $9 shipping on a $14 candle, about $0.86 of the shipping is fees. The calculator's Etsy price assumes free shipping or shipping priced separately; if you fold shipping into the item, price the shipping line with the same 9.5% on top.</p>
+<p><strong>Offsite Ads.</strong> If Etsy's Offsite Ads program brings a buyer, Etsy takes another 15% (12% once you pass $10k in the trailing year). You can't opt out below $10k. Either accept that some sales are thin or build 3&ndash;5% into every price to average it out.</p>
+<p><strong>Burn testing and failed batches.</strong> Every new wax, wick or fragrance costs a few test candles. Put something in the overhead line for them or they come out of your profit without you noticing.</p>
+
+<h3>Is 40% the right margin?</h3>
+<p>For direct sales, 40&ndash;60% is where most sustainable candle businesses land. Below 30%, one slow market or a price increase from your wax supplier puts you underwater. For wholesale, where the retailer roughly doubles your price, 25&ndash;35% on your side is normal, and the trade is volume and no fees. The calculator's wholesale line uses 25%.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How much does it cost to make a candle?</summary><p>An 8 oz soy container candle usually costs $4&ndash;$7 all-in with mid-range supplies, about $3&ndash;$4.50 of that materials. Plug in your own prices above for an exact figure.</p></details>
+<details><summary>How do I calculate fragrance load?</summary><p>Fragrance oil weight &divide; wax weight. To hit a fill weight: wax = fill &divide; (1 + load), fragrance = wax &times; load. The calculator does both and gives batch totals.</p></details>
+<details><summary>How do I price candles for a craft fair?</summary><p>Use the direct-sale price and remember the booth fee is overhead: a $150 booth over 60 candles sold is $2.50 each. Card readers take about 2.6% + $0.10 per tap, which the direct price doesn't include.</p></details>
+<details><summary>How do I price candles for wholesale?</summary><p>Retailers expect to buy at roughly half of what they'll sell for (keystone). Price wholesale from your cost at a 25&ndash;35% margin and check that doubling it lands at a believable retail price; if it doesn't, the product isn't a wholesale product yet.</p></details>
+<details><summary>Does this work for wax melts or soap?</summary><p>Yes for anything poured by weight: set the fill weight to the clamshell or bar weight, use the mold or clamshell cost in the jar field, and set fragrance load to your recipe's. For cold process soap it prices the batch but doesn't calculate lye; use a lye calculator for that.</p></details>
+<details><summary>Is this tax or business advice?</summary><p>No. It's an estimate from the numbers you enter and Etsy's published fees as of November 2026. Fees change; check Etsy's current fee page before relying on a number.</p></details>
+
+<div class="signup">
+  <strong>Get an email when Etsy changes its fees.</strong>
+  <p class="small" style="margin:4px 0 0">One short note per change, nothing else. Unsubscribe any time.</p>
+  <form name="fee-updates" method="POST" data-netlify="true" netlify-honeypot="website" action="/thanks/">
+    <input type="hidden" name="form-name" value="fee-updates">
+    <input type="hidden" name="source" value="candle-pricing-calculator">
+    <p style="display:none"><label>Website <input name="website"></label></p>
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Notify me</button>
+  </form>
+</div>
+
+<h2>More free calculators</h2>
+<div class="related">
+  <a href="/whatnot-fee-calculator/">Whatnot fee calculator<span>8% commission, 2.9% + $0.30 processing, live-show payouts</span></a>
+  <a href="/depop-fee-calculator/">Depop fee calculator<span>$0 selling fee, 3.3% + $0.45 processing, boosted listings</span></a>
+  <a href="/#pricing">Pricing calculators for makers<span>Bakery, candles, laser, apparel, 3D printing</span></a>
+</div>
+</article>
+</main>
+
+<footer class="site"><div class="narrow">
+  <p><a href="https://www.etsy.com/shop/MarkupandCo" target="_blank" rel="noopener">Markup &amp; Co. on Etsy</a> &middot; <a href="/">Templates</a> &middot; <a href="/#calculators">Free calculators</a> &middot; <a href="/audit/">Website health audits</a></p>
+  <p>This calculator is an estimate from the numbers you enter and Etsy's published US seller fees as of November 2026. It is not financial, tax or safety advice. Follow your wax and fragrance suppliers' guidance for burn testing and labeling.</p>
+  <p>Built by Markup &amp; Co. with the help of AI tools. Every formula is tested before release.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var r2=function(n){return Math.round(n*100)/100};
+  var fmt=function(n){return (n<0?'-$':'$')+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})};
+  var num=function(id){var v=parseFloat($(id).value);return isNaN(v)?0:v};
+  var ETSY_PCT=0.065+0.03, ETSY_FIXED=0.25+0.20;
+  function nice(p){ // round up to the next x.99 (or x.49)
+    var c=Math.ceil(p*2)/2; var cand=c-0.01; if(cand<p) cand=c+0.49; return cand;
+  }
+  function calc(){
+    var fill=num('fill'), load=num('load')/100, batch=Math.max(1,num('batch')), waste=num('waste')/100;
+    var waxoz=fill/(1+load), fooz=waxoz*load;
+    var waxpp=num('waxlb')>0?num('waxprice')/(num('waxlb')*16):0;
+    var fopp=num('fooz')>0?num('foprice')/num('fooz'):0;
+    var wax=r2(waxoz*waxpp), fo=r2(fooz*fopp);
+    var wst=r2((wax+fo)*waste);
+    var hard=r2(num('jar')+num('wick')+num('label')+num('dye'));
+    var labor=r2(num('mins')/batch*num('rate')/60);
+    var oh=r2(num('overhead'));
+    var cost=r2(wax+fo+wst+hard+labor+oh);
+    var m=num('margin')/100;
+    var direct=m<1?nice(cost/(1-m)):0;
+    var etsyDen=1-ETSY_PCT-m; var etsy=etsyDen>0.05?nice((cost+ETSY_FIXED)/etsyDen):0;
+    var whole=nice(cost/0.75);
+    var etsyFees=r2(etsy*ETSY_PCT+ETSY_FIXED);
+    var profit=r2(etsy-etsyFees-cost);
+    var perhour=num('mins')>0?(profit+labor)*batch/(num('mins')/60):0;
+    $('cost').textContent=fmt(cost);
+    $('o_wax').textContent=fmt(wax); $('waxnote').textContent='('+waxoz.toFixed(2)+' oz at '+fmt(waxpp)+'/oz)';
+    $('o_fo').textContent=fmt(fo); $('fonote').textContent='('+fooz.toFixed(2)+' oz at '+fmt(fopp)+'/oz)';
+    $('o_waste').textContent=fmt(wst); $('o_hard').textContent=fmt(hard);
+    $('o_labor').textContent=fmt(labor); $('labnote').textContent='('+(num('mins')/batch).toFixed(1)+' min each)';
+    $('o_oh').textContent=fmt(oh); $('o_cost').textContent=fmt(cost);
+    $('m1').textContent=Math.round(m*100)+'%';
+    $('o_direct').textContent=direct?fmt(direct):'–';
+    $('o_etsy').textContent=etsy?fmt(etsy):'margin too high for Etsy fees';
+    $('o_whole').textContent=fmt(whole)+' (retail ≈ '+fmt(nice(whole*2))+')';
+    $('o_profit').textContent=etsy?fmt(profit)+' after '+fmt(etsyFees)+' in fees':'–';
+    $('o_hour').textContent=etsy&&num('mins')>0?fmt(perhour)+'/hr':'–';
+    $('bn').textContent=batch;
+    var bwax=waxoz*batch*(1+waste), bfo=fooz*batch*(1+waste);
+    $('o_bwax').textContent=bwax.toFixed(1)+' oz ('+(bwax/16).toFixed(2)+' lb)';
+    $('o_bfo').textContent=bfo.toFixed(2)+' oz';
+    $('o_btot').textContent=(bwax+bfo).toFixed(1)+' oz';
+    $('loadwarn').textContent = load>0.12 ? 'A '+Math.round(load*100)+'% load is above what most waxes hold. Check your wax\'s maximum before pouring.' : '';
+  }
+  ['fill','load','batch','waste','waxprice','waxlb','foprice','fooz','jar','wick','label','dye','mins','rate','overhead','margin'].forEach(function(id){$(id).addEventListener('input',calc)});
+  calc();
+})();
+</script>
+</body>
+</html>
