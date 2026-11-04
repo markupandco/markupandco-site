@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Handmade &amp; Craft Pricing Calculator 2026 | Materials, Labor, Etsy Fees, Wholesale | Markup &amp; Co.</title>
+<meta name="description" content="Free craft pricing calculator. Add your materials, time and overhead and get a price that covers Etsy's fees (including the fee on shipping and Offsite Ads), a market price and a wholesale price, plus a price test for any number you have in mind. Current for 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://markupandco.com/craft-pricing-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Handmade &amp; Craft Pricing Calculator | Markup &amp; Co.">
+<meta property="og:description" content="What should you charge for a handmade item? Materials, time, overhead and every Etsy fee, worked out for you.">
+<meta property="og:url" content="https://markupandco.com/craft-pricing-calculator/">
+<meta property="og:image" content="https://markupandco.com/assets/img/pricing-1.jpg">
+<style>:root{--navy:#1E3A5F;--teal:#2E7D6B;--cream:#F6F3EC;--mint:#9FE3CF;--bg:#F6F3EC;--ink:#1F2933;--muted:#5B6773;--line:#E1E6EC;--card:#ffffff;--accent:#2E7D6B;--accent-ink:#ffffff;--soft:#EAF6F1;--ok:#1f6b4f;--ok-bg:#e6f5ee;--warn:#92400e;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.narrow{max-width:980px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:5;background:rgba(246,243,236,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:800;font-size:20px;color:var(--navy);text-decoration:none;letter-spacing:-.3px}
+.brand span{color:var(--teal)}
+nav.main a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:15px;font-weight:600}
+nav.main a:hover{color:var(--navy)}
+nav.main a.cta{background:var(--navy);color:#fff;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;white-space:nowrap}
+nav.main a.cta:hover{color:#fff}
+@media (max-width:980px){nav.main a:not(.cta){display:none}}
+.hero{padding:36px 0 8px}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-1px;color:var(--navy);margin:0 0 12px}
+.hero p.lede{font-size:18px;color:var(--muted);max-width:720px;margin:0}
+.stamp{display:inline-block;font-size:13px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px;margin-top:12px}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0 8px}
+@media (max-width:760px){.calc{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(30,58,95,.06)}
+.card h2{margin:0 0 12px;font-size:18px;color:var(--navy)}
+label{display:block;font-size:14px;font-weight:600;margin:12px 0 4px}
+label small{font-weight:400;color:var(--muted)}
+.field{position:relative}
+.field .pre{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.field .suf{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+input[type=number],select{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input.money{padding-left:26px}
+input.pct{padding-right:30px}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check{display:flex;align-items:center;gap:8px;font-weight:500;margin-top:14px}
+.check input{width:18px;height:18px}
+.results .big{font-size:34px;font-weight:800;line-height:1.1;margin:4px 0 2px;color:var(--navy)}
+.results .sub{color:var(--muted);font-size:14px}
+.results table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+.results td{padding:7px 0;border-top:1px solid var(--line)}
+.results td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.results tr.total td{font-weight:700}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.warn{background:var(--warn-bg);color:var(--warn)}
+.reverse{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.reverse .out{font-size:22px;font-weight:700}
+.promo{background:var(--navy);color:#fff;border:0;border-radius:14px;padding:18px 20px;margin:24px 0;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.promo p{margin:0;flex:1 1 320px}
+.promo a{color:#fff}
+.promo .btn{background:var(--teal)}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+article{max-width:760px}
+article h2{font-size:26px;color:var(--navy);letter-spacing:-.5px;margin:36px 0 10px}
+article h3{font-size:18px;color:var(--navy);margin:22px 0 6px}
+article p,article li{color:#2e2b26}
+table.fees{width:100%;border-collapse:collapse;margin:12px 0 4px;font-size:15px}
+table.fees th,table.fees td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.fees th{background:#EEF1F5;font-weight:600;color:var(--navy)}
+.example{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;font-size:15px}
+.example b{display:block;margin-bottom:4px}
+details{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 2px}
+.signup{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:28px 0}
+.signup form{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.signup input[type=email]{flex:1 1 220px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.signup button{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 16px;cursor:pointer}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0 30px}
+.related a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink)}
+.related a span{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 40px;font-size:14px;color:var(--muted)}
+footer.site p{margin:6px 0}
+.small{font-size:13px;color:var(--muted)}
+
+.mat{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:end;margin-top:8px}
+.mat label{margin:0 0 4px;font-size:12px;color:var(--muted);font-weight:600}
+.mat input[type=text]{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.mat .field .pre{left:10px}
+@media (max-width:520px){.mat{grid-template-columns:1fr 1fr}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"SoftwareApplication","name":"Handmade & Craft Pricing Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","url":"https://markupandco.com/craft-pricing-calculator/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Markup & Co.","url":"https://markupandco.com/"},"description":"Free calculator for makers: cost per item from materials, labor and overhead, and the price that hits a target margin on Etsy (after transaction, processing, listing and Offsite Ads fees), at a market and at wholesale."},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I price handmade items?","acceptedAnswer":{"@type":"Answer","text":"Add up materials per item, your time at a real hourly rate, packaging and a share of overhead. That is your cost. Divide by one minus your target margin for a direct-sale price. For Etsy, also cover the 6.5% transaction fee and 3% + $0.25 processing (charged on shipping too) and the $0.20 listing renewal: price = (cost + $0.45) ÷ (0.905 − margin) when the buyer pays shipping separately."},
+{"@type":"Question","name":"What is the formula for pricing crafts?","acceptedAnswer":{"@type":"Answer","text":"The common shortcut is materials + labor × 2 for wholesale and × 4 for retail. It ignores fees and overhead, so it often underprices on Etsy. A cost-plus-margin formula (cost ÷ (1 − margin)) with the platform's fees added is more reliable."},
+{"@type":"Question","name":"How much does Etsy take from a sale?","acceptedAnswer":{"@type":"Answer","text":"On a US sale: a 6.5% transaction fee on item plus shipping, 3% + $0.25 payment processing on the same total, and $0.20 per listing sold. If the buyer came through Offsite Ads, another 15% (12% for shops over $10,000 in the past year). On a $25 item with $5 shipping that is $3.30, or $7.80 with Offsite Ads."},
+{"@type":"Question","name":"What profit margin should handmade sellers aim for?","acceptedAnswer":{"@type":"Answer","text":"30% to 50% on direct sales is typical for a sustainable craft business. Wholesale usually lands at 20% to 35% because the retailer doubles your price. Under 25% leaves little room for fees, returns, free-shipping expectations and supply price increases."}
+]}]}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/">Markup <span>&amp;</span> Co.</a>
+  <nav class="main" aria-label="Sections"><a href="/#pricing">Pricing calculators</a><a href="/#reseller">Reseller tools</a><a href="/#tax">Taxes &amp; mileage</a><a href="/#calculators">Free calculators</a><a class="cta" href="https://www.etsy.com/shop/MarkupandCo" target="_blank" rel="noopener">Shop on Etsy</a></nav>
+</div></header>
+
+<main class="narrow">
+<section class="hero">
+  <h1>Handmade &amp; Craft Pricing Calculator</h1>
+  <p class="lede">Add up what one item costs you to make, then see the price that keeps the margin you want on Etsy, at a market and at wholesale. Test any price you have in mind and see what you'd actually keep.</p>
+  <span class="stamp">Etsy US fee rules current as of November 2026</span>
+</section>
+
+<section class="calc" id="calculator">
+  <div class="card">
+    <h2>Materials per item</h2>
+    <p class="small">Enter what you paid for a pack, how many units are in it, and how many units one item uses. Units can be anything: grams, inches, beads, sheets.</p>
+    <div id="mats"></div>
+    <p class="small" style="margin-top:8px"><a href="#" id="addmat">+ Add a material</a></p>
+
+    <h2 style="margin-top:22px">Time, packaging and overhead</h2>
+    <div class="row2">
+      <div>
+        <label for="mins">Minutes to make one</label>
+        <input id="mins" type="number" min="0" step="1" value="25" inputmode="numeric">
+      </div>
+      <div>
+        <label for="rate">What your hour is worth</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="rate" type="number" min="0" step="1" value="20" inputmode="decimal"></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="pack">Packaging per item <small>(box, tissue, card)</small></label>
+        <div class="field"><span class="pre">$</span><input class="money" id="pack" type="number" min="0" step="0.05" value="0.60" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="overhead">Overhead per item <small>(tools, booth, software)</small></label>
+        <div class="field"><span class="pre">$</span><input class="money" id="overhead" type="number" min="0" step="0.05" value="0.50" inputmode="decimal"></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:22px">Shipping and margin</h2>
+    <div class="row2">
+      <div>
+        <label for="shipcharge">Shipping you charge the buyer</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="shipcharge" type="number" min="0" step="0.25" value="5" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="shipcost">What the label costs you</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="shipcost" type="number" min="0" step="0.25" value="5" inputmode="decimal"></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="margin">Target profit margin</label>
+        <div class="field"><input class="pct" id="margin" type="number" min="0" max="90" step="1" value="40" inputmode="decimal"><span class="suf">%</span></div>
+      </div>
+      <div>
+        <label for="test">Test a price <small>(optional)</small></label>
+        <div class="field"><span class="pre">$</span><input class="money" id="test" type="number" min="0" step="0.5" value="24" inputmode="decimal"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card results" aria-live="polite">
+    <h2>What one item costs</h2>
+    <div class="big" id="cost">$0.00</div>
+    <div class="sub">materials, labor, packaging and overhead</div>
+    <table>
+      <tr><td>Materials</td><td id="o_mat">$0.00</td></tr>
+      <tr><td>Labor <span class="small" id="labnote"></span></td><td id="o_labor">$0.00</td></tr>
+      <tr><td>Packaging</td><td id="o_pack">$0.00</td></tr>
+      <tr><td>Overhead</td><td id="o_oh">$0.00</td></tr>
+      <tr class="total"><td>Cost per item</td><td id="o_cost">$0.00</td></tr>
+    </table>
+
+    <h2 style="margin-top:22px">Price to hit <span id="m1">40%</span> margin</h2>
+    <table>
+      <tr><td>Market, website or cash <span class="small">(no platform fee)</span></td><td id="o_direct">$0.00</td></tr>
+      <tr><td>Etsy <span class="small">(6.5% + 3% + $0.25 on item + shipping, + $0.20)</span></td><td id="o_etsy">$0.00</td></tr>
+      <tr><td>Etsy via Offsite Ads <span class="small">(+15%)</span></td><td id="o_osa">$0.00</td></tr>
+      <tr><td>Wholesale at 25% <span class="small">(retailer doubles it)</span></td><td id="o_whole">$0.00</td></tr>
+    </table>
+
+    <h2 style="margin-top:22px">If you charge <span id="t1">$24.00</span> on Etsy</h2>
+    <table>
+      <tr><td>Etsy fees <span class="small">(normal sale)</span></td><td id="t_fees">$0.00</td></tr>
+      <tr><td>Profit after fees, shipping and cost</td><td id="t_profit">$0.00</td></tr>
+      <tr><td>Margin / what you earn per hour</td><td id="t_margin">–</td></tr>
+      <tr><td>Profit if that sale came through Offsite Ads</td><td id="t_osa">$0.00</td></tr>
+    </table>
+    <p style="margin:12px 0 0"><span class="pill ok" id="verdict"></span></p>
+  </div>
+</section>
+
+<div class="promo">
+  <p><strong>Pricing a whole product line?</strong> The Handmade Pricing Calculator spreadsheet keeps every product, recipe and material in one place, compares 8 sales channels side by side, and tells you the sales per month that cover your overhead and reach your income goal.</p>
+  <a class="btn" href="https://www.etsy.com/listing/4609132986/etsy-pricing-calculator-spreadsheet-etsy" target="_blank" rel="noopener">See it on Etsy &middot; $9.99</a>
+</div>
+
+<article>
+<h2>How to price handmade items in 2026</h2>
+<p>The formula most makers learn first is "materials plus labor, times two for wholesale, times four for retail." It's easy to remember and it's wrong often enough to matter: it ignores fees, packaging, overhead and the fact that the buyer's shipping charge gets taxed by Etsy too. The calculator above does cost-plus-margin instead, which is how any business prices: find the true cost of one item, decide what margin you need, and solve for the price with the platform's fees included.</p>
+
+<h3>What Etsy actually takes</h3>
+<table class="fees">
+<tr><th>Fee</th><th>Rate</th><th>Charged on</th></tr>
+<tr><td>Transaction fee</td><td>6.5%</td><td>Item price + shipping charged + gift wrap</td></tr>
+<tr><td>Payment processing (US)</td><td>3% + $0.25</td><td>The order total including shipping and tax</td></tr>
+<tr><td>Listing fee</td><td>$0.20</td><td>Per listing, renewed each time it sells</td></tr>
+<tr><td>Offsite Ads</td><td>15% (12% over $10k/yr)</td><td>Order total, only on sales attributed to an Etsy-run ad. Mandatory under $10k in trailing-12-month sales.</td></tr>
+<tr><td>Etsy Ads</td><td>Your daily budget</td><td>Optional; separate from Offsite Ads</td></tr>
+</table>
+<p class="small">US rates as published by Etsy, November 2026. Processing rates differ outside the US. Sales tax Etsy collects is passed through, but processing is charged on it.</p>
+<p>Put together, a normal Etsy sale costs about 9.5% of the order total plus $0.45. An Offsite Ads sale costs about 24.5% plus $0.45. That second number is why a price that looks fine on a spreadsheet can lose money on the sales Etsy sends you from Google Shopping or Pinterest.</p>
+
+<h3>Worked example: a $24 macramé plant hanger</h3>
+<div class="example"><b>Cost</b>
+Cotton cord $18 for 328 ft, 45 ft used = $2.47. Wooden ring $0.55. Brass bead $0.30. Labor 25 min at $20/hr = $8.33. Packaging $0.60. Overhead $0.50. <strong>Cost $12.75.</strong></div>
+<div class="example"><b>Prices at a 40% margin, $5 shipping charged, $5 label</b>
+Market or website: <strong>$21.49</strong>. Etsy: <strong>$27.49</strong>. Etsy if the sale comes through Offsite Ads: <strong>$40.99</strong>. Wholesale at 25%: $17.49, retailing around $34.99.</div>
+<div class="example"><b>Testing $24 on Etsy</b>
+Fees on a $29 order (item + shipping) are 9.5% + $0.45 = $3.21. After the $5 label and $12.75 cost, profit is <strong>$8.04</strong>, a 33.5% margin and $39.29 per hour. On an Offsite Ads sale the same $24 item makes $3.69.</div>
+
+<h3>Four places craft pricing goes wrong</h3>
+<p><strong>Not paying yourself.</strong> If labor is $0 in your sheet, you're not running a business, you're subsidizing strangers' gifts. Pick a number you'd accept from an employer. $20/hr is a common floor; skilled work is more.</p>
+<p><strong>Shipping.</strong> Etsy charges its 6.5% and 3% on the shipping you collect, so a $5 shipping charge costs you $0.48 in fees before the label. If you offer "free shipping," the label cost and that fee have to live inside the item price; the calculator handles this if you set shipping charged to $0 and keep the label cost.</p>
+<p><strong>Overhead.</strong> Booth fees, Etsy Ads, your label printer, the Canva subscription, test batches. Divide a month's worth by the items you sell in a month and put it in the overhead line. For many small shops it's $0.50&ndash;$2 per item.</p>
+<p><strong>Underpricing to compete.</strong> The $9 version of your product on page one is usually someone who hasn't done this math yet. Price from your cost, then make the listing earn it with photos and description.</p>
+
+<h3>Which margin?</h3>
+<p>Direct sales: 35&ndash;50%. Etsy: aim for the same, knowing Offsite Ads sales will come in lower. Wholesale: 20&ndash;35%, with the check that doubling your wholesale price gives a believable retail price. If it doesn't, either the product isn't a wholesale product or your cost is too high.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How do I price handmade items?</summary><p>Cost per item (materials + labor + packaging + overhead) divided by (1 &minus; margin), with the platform's fees added. The calculator does the fee math for Etsy, a market and wholesale.</p></details>
+<details><summary>What's the formula for pricing crafts?</summary><p>The old "×2 wholesale, ×4 retail" rule is a rough proxy for a 50% margin with no fees. Cost-plus-margin with fees is more reliable on Etsy. See the worked example above.</p></details>
+<details><summary>How much does Etsy take from a sale?</summary><p>About 9.5% of the order total (item + shipping) plus $0.45 on a normal US sale; about 24.5% plus $0.45 if the buyer came through Offsite Ads.</p></details>
+<details><summary>Should I offer free shipping on Etsy?</summary><p>Etsy favors listings with free shipping over $35 in US search. If you do, fold the label cost into the price and remember the fee is now charged on the whole amount. Set shipping charged to $0 in the calculator to see the effect.</p></details>
+<details><summary>What margin should I aim for?</summary><p>35&ndash;50% direct, 20&ndash;35% wholesale. Under 25% is fragile.</p></details>
+<details><summary>Is this tax or business advice?</summary><p>No. It's an estimate from the numbers you enter and Etsy's published fees as of November 2026.</p></details>
+
+<div class="signup">
+  <strong>Get an email when Etsy changes its fees.</strong>
+  <p class="small" style="margin:4px 0 0">One short note per change, nothing else. Unsubscribe any time.</p>
+  <form name="fee-updates" method="POST" data-netlify="true" netlify-honeypot="website" action="/thanks/">
+    <input type="hidden" name="form-name" value="fee-updates">
+    <input type="hidden" name="source" value="craft-pricing-calculator">
+    <p style="display:none"><label>Website <input name="website"></label></p>
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Notify me</button>
+  </form>
+</div>
+
+<h2>More free calculators</h2>
+<div class="related">
+  <a href="/candle-pricing-calculator/">Candle cost &amp; pricing calculator<span>Wax, fragrance load, jars, wicks and batch weights</span></a>
+  <a href="/3d-print-cost-calculator/">3D print cost calculator<span>Filament or resin, printer time, failed prints, post-processing</span></a>
+  <a href="/#pricing">Pricing calculators for makers<span>Bakery, candles, laser, apparel, 3D printing</span></a>
+</div>
+</article>
+</main>
+
+<footer class="site"><div class="narrow">
+  <p><a href="https://www.etsy.com/shop/MarkupandCo" target="_blank" rel="noopener">Markup &amp; Co. on Etsy</a> &middot; <a href="/">Templates</a> &middot; <a href="/#calculators">Free calculators</a> &middot; <a href="/audit/">Website health audits</a></p>
+  <p>This calculator is an estimate from the numbers you enter and Etsy's published US seller fees as of November 2026. Etsy can change fees. It is not financial or tax advice. Markup &amp; Co. is not affiliated with Etsy.</p>
+  <p>Built by Markup &amp; Co. with the help of AI tools. Every formula is tested before release.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var r2=function(n){return Math.round(n*100)/100};
+  var fmt=function(n){return (n<0?'-$':'$')+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})};
+  var num=function(el){var v=parseFloat(el.value);return isNaN(v)?0:v};
+  var ETSY=0.065+0.03, FIXED=0.25+0.20, OSA=0.15;
+  function nice(p){var c=Math.ceil(p*2)/2;var cand=c-0.01;if(cand<p)cand=c+0.49;return cand;}
+  var defaults=[['Cotton cord',18,328,45],['Wooden ring',6.60,12,1],['Brass bead',3,10,1]];
+  var mats=$('mats');
+  function addMat(d){
+    d=d||['',0,1,1];
+    var row=document.createElement('div');row.className='mat';
+    row.innerHTML='<div><label>Material</label><input type="text" value="'+d[0]+'" placeholder="e.g. yarn"></div>'+
+      '<div><label>Pack price</label><div class="field"><span class="pre">$</span><input class="money" type="number" min="0" step="0.01" value="'+d[1]+'" inputmode="decimal"></div></div>'+
+      '<div><label>Units in pack</label><input type="number" min="0.01" step="any" value="'+d[2]+'" inputmode="decimal"></div>'+
+      '<div><label>Units per item</label><input type="number" min="0" step="any" value="'+d[3]+'" inputmode="decimal"></div>';
+    mats.appendChild(row);
+    row.querySelectorAll('input').forEach(function(i){i.addEventListener('input',calc)});
+  }
+  defaults.forEach(addMat);
+  $('addmat').addEventListener('click',function(e){e.preventDefault();addMat();});
+  function etsyPrice(cost,m,ship,shipcost,extra){
+    var pct=ETSY+(extra||0); var den=(1-pct)-m; if(den<=0.05) return 0;
+    return nice((cost+shipcost+FIXED-(1-pct)*ship)/den);
+  }
+  function calc(){
+    var mat=0;
+    mats.querySelectorAll('.mat').forEach(function(row){
+      var i=row.querySelectorAll('input[type=number]'); var pp=num(i[0]),u=num(i[1]),use=num(i[2]);
+      if(u>0) mat+=pp/u*use;
+    });
+    mat=r2(mat);
+    var mins=num($('mins')), rate=num($('rate'));
+    var labor=r2(mins/60*rate), pack=r2(num($('pack'))), oh=r2(num($('overhead')));
+    var cost=r2(mat+labor+pack+oh);
+    var m=num($('margin'))/100, ship=num($('shipcharge')), shipcost=num($('shipcost'));
+    $('cost').textContent=fmt(cost); $('o_mat').textContent=fmt(mat); $('o_labor').textContent=fmt(labor);
+    $('labnote').textContent='('+mins+' min at '+fmt(rate)+'/hr)';
+    $('o_pack').textContent=fmt(pack); $('o_oh').textContent=fmt(oh); $('o_cost').textContent=fmt(cost);
+    $('m1').textContent=Math.round(m*100)+'%';
+    var direct=m<1?nice(cost/(1-m)):0; $('o_direct').textContent=direct?fmt(direct):'–';
+    var e=etsyPrice(cost,m,ship,shipcost), o=etsyPrice(cost,m,ship,shipcost,OSA);
+    $('o_etsy').textContent=e?fmt(e):'margin too high for Etsy fees';
+    $('o_osa').textContent=o?fmt(o):'margin too high for Offsite Ads fees';
+    var w=nice(cost/0.75); $('o_whole').textContent=fmt(w)+' (retail ≈ '+fmt(nice(w*2))+')';
+    var t=num($('test')); $('t1').textContent=fmt(t);
+    var fees=r2((t+ship)*ETSY+FIXED), profit=r2(t+ship-fees-shipcost-cost);
+    var feesO=r2((t+ship)*(ETSY+OSA)+FIXED), profitO=r2(t+ship-feesO-shipcost-cost);
+    $('t_fees').textContent=fmt(fees); $('t_profit').textContent=fmt(profit);
+    $('t_margin').textContent=(t>0?(profit/t*100).toFixed(1)+'%':'–')+(mins>0?' / '+fmt((profit+labor)/(mins/60))+'/hr':'');
+    $('t_osa').textContent=fmt(profitO);
+    var v=$('verdict');
+    if(t<=0){v.textContent='';return;}
+    if(profitO>0){v.className='pill ok';v.textContent=fmt(t)+' is profitable even on an Offsite Ads sale'}
+    else if(profit>0){v.className='pill warn';v.textContent=fmt(t)+' works on a normal sale but loses '+fmt(-profitO)+' on an Offsite Ads sale'}
+    else {v.className='pill warn';v.textContent=fmt(t)+' loses money on Etsy: raise it to at least '+(e?fmt(e):'a higher price')}
+  }
+  ['mins','rate','pack','overhead','shipcharge','shipcost','margin','test'].forEach(function(id){$(id).addEventListener('input',calc)});
+  calc();
+})();
+</script>
+</body>
+</html>

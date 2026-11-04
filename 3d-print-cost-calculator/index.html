@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3D Print Cost Calculator 2026 | Filament &amp; Resin Cost, Printer Time, Price per Print | Markup &amp; Co.</title>
+<meta name="description" content="Free 3D print cost calculator. Enter grams or ml from your slicer, print hours and your printer and get the true cost per print (filament, machine wear, electricity, failed prints, post-processing) and the price to charge on Etsy or by quote. Current for 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://markupandco.com/3d-print-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="3D Print Cost Calculator | Markup &amp; Co.">
+<meta property="og:description" content="What does a 3D print really cost? Filament or resin, printer hours, electricity, failed prints and your time, then a price that keeps your margin.">
+<meta property="og:url" content="https://markupandco.com/3d-print-cost-calculator/">
+<meta property="og:image" content="https://markupandco.com/assets/img/print3d-1.jpg">
+<style>:root{--navy:#1E3A5F;--teal:#2E7D6B;--cream:#F6F3EC;--mint:#9FE3CF;--bg:#F6F3EC;--ink:#1F2933;--muted:#5B6773;--line:#E1E6EC;--card:#ffffff;--accent:#2E7D6B;--accent-ink:#ffffff;--soft:#EAF6F1;--ok:#1f6b4f;--ok-bg:#e6f5ee;--warn:#92400e;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.narrow{max-width:980px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:5;background:rgba(246,243,236,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:800;font-size:20px;color:var(--navy);text-decoration:none;letter-spacing:-.3px}
+.brand span{color:var(--teal)}
+nav.main a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:15px;font-weight:600}
+nav.main a:hover{color:var(--navy)}
+nav.main a.cta{background:var(--navy);color:#fff;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;white-space:nowrap}
+nav.main a.cta:hover{color:#fff}
+@media (max-width:980px){nav.main a:not(.cta){display:none}}
+.hero{padding:36px 0 8px}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-1px;color:var(--navy);margin:0 0 12px}
+.hero p.lede{font-size:18px;color:var(--muted);max-width:720px;margin:0}
+.stamp{display:inline-block;font-size:13px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px;margin-top:12px}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0 8px}
+@media (max-width:760px){.calc{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(30,58,95,.06)}
+.card h2{margin:0 0 12px;font-size:18px;color:var(--navy)}
+label{display:block;font-size:14px;font-weight:600;margin:12px 0 4px}
+label small{font-weight:400;color:var(--muted)}
+.field{position:relative}
+.field .pre{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.field .suf{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+input[type=number],select{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input.money{padding-left:26px}
+input.pct{padding-right:30px}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check{display:flex;align-items:center;gap:8px;font-weight:500;margin-top:14px}
+.check input{width:18px;height:18px}
+.results .big{font-size:34px;font-weight:800;line-height:1.1;margin:4px 0 2px;color:var(--navy)}
+.results .sub{color:var(--muted);font-size:14px}
+.results table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+.results td{padding:7px 0;border-top:1px solid var(--line)}
+.results td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.results tr.total td{font-weight:700}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.warn{background:var(--warn-bg);color:var(--warn)}
+.reverse{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.reverse .out{font-size:22px;font-weight:700}
+.promo{background:var(--navy);color:#fff;border:0;border-radius:14px;padding:18px 20px;margin:24px 0;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.promo p{margin:0;flex:1 1 320px}
+.promo a{color:#fff}
+.promo .btn{background:var(--teal)}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+article{max-width:760px}
+article h2{font-size:26px;color:var(--navy);letter-spacing:-.5px;margin:36px 0 10px}
+article h3{font-size:18px;color:var(--navy);margin:22px 0 6px}
+article p,article li{color:#2e2b26}
+table.fees{width:100%;border-collapse:collapse;margin:12px 0 4px;font-size:15px}
+table.fees th,table.fees td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.fees th{background:#EEF1F5;font-weight:600;color:var(--navy)}
+.example{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;font-size:15px}
+.example b{display:block;margin-bottom:4px}
+details{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 2px}
+.signup{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:28px 0}
+.signup form{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.signup input[type=email]{flex:1 1 220px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.signup button{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 16px;cursor:pointer}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0 30px}
+.related a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink)}
+.related a span{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 40px;font-size:14px;color:var(--muted)}
+footer.site p{margin:6px 0}
+.small{font-size:13px;color:var(--muted)}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"SoftwareApplication","name":"3D Print Cost Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","url":"https://markupandco.com/3d-print-cost-calculator/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Markup & Co.","url":"https://markupandco.com/"},"description":"Free calculator for FDM and resin printing: material cost per gram or ml, printer cost per hour from purchase price and expected life, electricity, failed-print allowance, post-processing labor, and a selling price at a target margin including Etsy fees."},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much does it cost to 3D print something?","acceptedAnswer":{"@type":"Answer","text":"For FDM, filament is usually $0.02 to $0.03 per gram for PLA, so a 100 g print is $2 to $3 in material. Add printer wear and electricity (often $0.20 to $0.60 per hour), a failed-print allowance and any hands-on time. A 100 g, 5-hour print typically costs $4 to $7 all-in before profit."},
+{"@type":"Question","name":"How do I calculate filament cost per gram?","acceptedAnswer":{"@type":"Answer","text":"Divide the spool price by its net weight in grams. A $22 spool of 1 kg PLA is $0.022 per gram. Multiply by the grams your slicer reports for the print, then add a percentage for failed prints and purge."},
+{"@type":"Question","name":"How much does a 3D printer cost per hour to run?","acceptedAnswer":{"@type":"Answer","text":"Divide the printer's price by the hours you expect it to last (3,000 to 5,000 print hours is a reasonable range for a hobby or prosumer machine) and add upkeep like nozzles, plates and belts, plus electricity. A $600 printer over 4,000 hours is $0.15 per hour; with $0.05 upkeep and about $0.02 of electricity at 120 W, call it $0.22 per hour."},
+{"@type":"Question","name":"How should I price 3D prints to sell?","acceptedAnswer":{"@type":"Answer","text":"Work out the full cost per print, then divide by one minus your target margin. For Etsy, also cover the 6.5% transaction fee, 3% + $0.25 processing and $0.20 listing fee. A $6 print at a 40% margin is $10 direct and about $12.99 on Etsy."}
+]}]}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/">Markup <span>&amp;</span> Co.</a>
+  <nav class="main" aria-label="Sections"><a href="/#pricing">Pricing calculators</a><a href="/#reseller">Reseller tools</a><a href="/#tax">Taxes &amp; mileage</a><a href="/#calculators">Free calculators</a><a class="cta" href="https://www.etsy.com/shop/MarkupandCo" target="_blank" rel="noopener">Shop on Etsy</a></nav>
+</div></header>
+
+<main class="narrow">
+<section class="hero">
+  <h1>3D Print Cost Calculator</h1>
+  <p class="lede">Type in the grams and hours from your slicer and what you paid for your printer and material. Get the real cost of one print, including machine wear, electricity, failed prints and your time, and the price that keeps your margin.</p>
+  <span class="stamp">Etsy US fee rules current as of November 2026 &middot; works for FDM and resin</span>
+</section>
+
+<section class="calc" id="calculator">
+  <div class="card">
+    <h2>The print</h2>
+    <label for="mode">Material type</label>
+    <select id="mode"><option value="fdm" selected>Filament (FDM): grams</option><option value="resin">Resin (SLA/MSLA): ml</option></select>
+    <div class="row2">
+      <div>
+        <label for="used" id="usedlabel">Material used per print <small>(from slicer)</small></label>
+        <div class="field"><input class="pct" id="used" type="number" min="0" step="1" value="100" inputmode="decimal"><span class="suf" id="unit">g</span></div>
+      </div>
+      <div>
+        <label for="hours">Print time</label>
+        <div class="field"><input class="pct" id="hours" type="number" min="0" step="0.25" value="5" inputmode="decimal"><span class="suf">hr</span></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="matprice" id="mpl">Spool price</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="matprice" type="number" min="0" step="0.01" value="22" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="matqty" id="mql">Spool weight</label>
+        <div class="field"><input class="pct" id="matqty" type="number" min="1" step="1" value="1000" inputmode="decimal"><span class="suf" id="unit2">g</span></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="fail">Failed prints and purge allowance</label>
+        <div class="field"><input class="pct" id="fail" type="number" min="0" max="100" step="1" value="8" inputmode="decimal"><span class="suf">%</span></div>
+      </div>
+      <div>
+        <label for="hardware">Hardware, inserts, packaging</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="hardware" type="number" min="0" step="0.05" value="0.60" inputmode="decimal"></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:22px">Your printer</h2>
+    <div class="row2">
+      <div>
+        <label for="pprice">Printer price</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="pprice" type="number" min="0" step="10" value="600" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="plife">Expected life <small>(print hours)</small></label>
+        <div class="field"><input class="pct" id="plife" type="number" min="100" step="100" value="4000" inputmode="numeric"><span class="suf">hr</span></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="watts">Average power draw</label>
+        <div class="field"><input class="pct" id="watts" type="number" min="0" step="10" value="120" inputmode="numeric"><span class="suf">W</span></div>
+      </div>
+      <div>
+        <label for="kwh">Electricity rate</label>
+        <div class="field"><span class="pre">$</span><input class="money pct" id="kwh" type="number" min="0" step="0.01" value="0.17" inputmode="decimal"><span class="suf">/kWh</span></div>
+      </div>
+    </div>
+    <label for="upkeep">Upkeep per print hour <small>(nozzles, plates, belts, FEP, IPA)</small></label>
+    <div class="field"><span class="pre">$</span><input class="money" id="upkeep" type="number" min="0" step="0.01" value="0.05" inputmode="decimal"></div>
+
+    <h2 style="margin-top:22px">Your time and margin</h2>
+    <div class="row2">
+      <div>
+        <label for="mins">Hands-on minutes per print <small>(setup, supports, sanding)</small></label>
+        <input id="mins" type="number" min="0" step="1" value="8" inputmode="numeric">
+      </div>
+      <div>
+        <label for="rate">What your hour is worth</label>
+        <div class="field"><span class="pre">$</span><input class="money" id="rate" type="number" min="0" step="1" value="20" inputmode="decimal"></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div>
+        <label for="overhead">Overhead per print <small>(software, space, tests)</small></label>
+        <div class="field"><span class="pre">$</span><input class="money" id="overhead" type="number" min="0" step="0.05" value="0.25" inputmode="decimal"></div>
+      </div>
+      <div>
+        <label for="margin">Target profit margin</label>
+        <div class="field"><input class="pct" id="margin" type="number" min="0" max="90" step="1" value="40" inputmode="decimal"><span class="suf">%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card results" aria-live="polite">
+    <h2>What one print costs</h2>
+    <div class="big" id="cost">$0.00</div>
+    <div class="sub">material, machine, electricity, labor and overhead</div>
+    <table>
+      <tr><td>Material <span class="small" id="matnote"></span></td><td id="o_mat">$0.00</td></tr>
+      <tr><td>Failed-print allowance <span class="small" id="failnote"></span></td><td id="o_fail">$0.00</td></tr>
+      <tr><td>Printer wear <span class="small" id="wearnote"></span></td><td id="o_wear">$0.00</td></tr>
+      <tr><td>Upkeep</td><td id="o_upkeep">$0.00</td></tr>
+      <tr><td>Electricity <span class="small" id="elecnote"></span></td><td id="o_elec">$0.00</td></tr>
+      <tr><td>Hardware and packaging</td><td id="o_hw">$0.00</td></tr>
+      <tr><td>Labor <span class="small" id="labnote"></span></td><td id="o_labor">$0.00</td></tr>
+      <tr><td>Overhead</td><td id="o_oh">$0.00</td></tr>
+      <tr class="total"><td>Cost per print</td><td id="o_cost">$0.00</td></tr>
+      <tr><td>Machine cost per hour <span class="small">(wear + upkeep + power)</span></td><td id="o_mhr">$0.00</td></tr>
+    </table>
+
+    <h2 style="margin-top:22px">What to charge at <span id="m1">40%</span> margin</h2>
+    <table>
+      <tr><td>Direct quote, market or website</td><td id="o_direct">$0.00</td></tr>
+      <tr><td>On Etsy <span class="small">(6.5% + 3% + $0.25 + $0.20)</span></td><td id="o_etsy">$0.00</td></tr>
+      <tr><td>Wholesale or bulk at 25%</td><td id="o_whole">$0.00</td></tr>
+      <tr><td>Profit per print at the Etsy price</td><td id="o_profit">$0.00</td></tr>
+      <tr><td>Printer earnings per print hour at the Etsy price</td><td id="o_phr">$0.00</td></tr>
+    </table>
+    <p class="small" style="margin-top:10px" id="note"></p>
+  </div>
+</section>
+
+<div class="promo">
+  <p><strong>Running more than one printer or product?</strong> The 3D Printing Pricing Calculator spreadsheet keeps every printer, material and product in one place, quotes orders from 1 to 250 with setup time spread across the batch, and compares 10 sales channels side by side.</p>
+  <a class="btn" href="https://www.etsy.com/listing/4609242660" target="_blank" rel="noopener">See it on Etsy &middot; $11.99</a>
+</div>
+
+<article>
+<h2>What a 3D print really costs</h2>
+<p>"Filament times three" is the pricing rule you'll see in every print-farm forum, and it's fine until you notice that a 20-hour print of a 300 g part and a 2-hour print of a 300 g part cost you very different amounts of printer. The calculator above costs the five things that actually vary: material (with a failure allowance), printer wear per hour, electricity, your hands-on time, and overhead.</p>
+
+<h3>Cost per gram and per hour: the two numbers to know</h3>
+<p><strong>Material per gram.</strong> Spool price &divide; net grams. A $22 1 kg spool is $0.022/g; a $35 spool of PETG-CF is $0.035/g; a $30 1 kg bottle of standard resin is about $0.03/ml. Multiply by what your slicer reports, then add 5&ndash;15% for failed prints, purge lines and support material you'll throw away.</p>
+<p><strong>Printer per hour.</strong> Printer price &divide; expected print hours, plus upkeep, plus electricity. A $600 printer over 4,000 hours is $0.15/hr. Nozzles, build plates, belts and (for resin) FEP film and IPA run $0.03&ndash;$0.10/hr depending on the machine. Electricity at 120 W and $0.17/kWh is about $0.02/hr. So roughly $0.20&ndash;$0.30 per hour for a typical prosumer FDM machine, more for a $1,500 printer or a high-temp enclosure. Four thousand hours is conservative for a well-maintained machine; if yours lasts 8,000 the wear halves.</p>
+
+<h3>Worked example: 100 g planter, 5-hour print</h3>
+<div class="example"><b>Inputs</b>
+PLA $22/kg &middot; 100 g &middot; 5 hr &middot; 8% failure allowance &middot; $600 printer over 4,000 hr &middot; $0.05/hr upkeep &middot; 120 W at $0.17/kWh &middot; 8 min hands-on at $20/hr &middot; $0.60 hardware/packaging &middot; $0.25 overhead &middot; 40% margin.</div>
+<div class="example"><b>Cost</b>
+Material 100 g &times; $0.022 = $2.20. Failure allowance 8% = $0.18. Wear 5 hr &times; $0.15 = $0.75. Upkeep 5 &times; $0.05 = $0.25. Electricity 0.6 kWh &times; $0.17 = $0.10. Hardware $0.60. Labor 8 min = $2.67. Overhead $0.25. <strong>Total $7.00</strong> (machine cost $0.22/hr).</div>
+<div class="example"><b>Prices</b>
+Direct at 40% margin: <strong>$11.99</strong>. On Etsy: <strong>$14.99</strong>, leaving $6.12 profit after $1.87 in fees. Wholesale at 25%: $9.49. At the Etsy price the printer earns about $1.44 per hour it runs, which is the number that tells you whether a second printer pays for itself.</div>
+
+<h3>Where print-farm pricing goes wrong</h3>
+<p><strong>Ignoring failures.</strong> A 5% failure rate on 20-hour prints is a lot of printer time, not just filament. The calculator applies the allowance to material; if your failures are mostly long prints, bump it up or add the lost hours to upkeep.</p>
+<p><strong>Pricing by grams only.</strong> Two prints with the same grams can differ 5&times; in hours (tall thin vase vs. a flat plate). Hours are what limit how many orders you can take, so hours have to be in the price.</p>
+<p><strong>Zero labor.</strong> Removing supports, sanding, inserting heat-set nuts, bagging and labeling adds up. Eight minutes at $20/hr is $2.67, often more than the filament.</p>
+<p><strong>Etsy's fee on shipping.</strong> Etsy's 6.5% + 3% applies to the shipping you charge. For heavy prints with $8&ndash;$12 shipping that's another $0.80&ndash;$1.15 per order the calculator's Etsy price doesn't include; add it to overhead or price shipping with 10% on top.</p>
+<p><strong>Policy.</strong> Etsy's 2026 rules bar mass-produced items made from designs you didn't create, so models you downloaded from a repository, even with a commercial license, may not be listable. Designs you made yourself are fine. Check the current policy before listing.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How much does it cost to 3D print something?</summary><p>For FDM, about $0.02&ndash;$0.03/g for PLA plus $0.20&ndash;$0.30 per printer hour, plus your time. A 100 g, 5-hour print is typically $4&ndash;$7 all-in before profit.</p></details>
+<details><summary>How do I calculate filament cost per gram?</summary><p>Spool price &divide; net grams. $22 &divide; 1,000 = $0.022/g. Multiply by the grams your slicer shows and add a failure allowance.</p></details>
+<details><summary>How much does a 3D printer cost per hour?</summary><p>Printer price &divide; expected print hours, plus upkeep and electricity. A $600 printer over 4,000 hours with $0.05 upkeep and 120 W draw is about $0.22/hr.</p></details>
+<details><summary>How should I price 3D prints to sell?</summary><p>Full cost &divide; (1 &minus; margin), with Etsy's fees added if you sell there. The calculator shows direct, Etsy and wholesale prices.</p></details>
+<details><summary>Does this work for resin?</summary><p>Yes. Switch the material type to resin and enter ml used and bottle price and size. Put FEP film, IPA and gloves in upkeep; washing and curing time in hands-on minutes.</p></details>
+<details><summary>Is this tax or business advice?</summary><p>No. It's an estimate from your numbers and Etsy's published fees as of November 2026.</p></details>
+
+<div class="signup">
+  <strong>Get an email when Etsy changes its fees.</strong>
+  <p class="small" style="margin:4px 0 0">One short note per change, nothing else. Unsubscribe any time.</p>
+  <form name="fee-updates" method="POST" data-netlify="true" netlify-honeypot="website" action="/thanks/">
+    <input type="hidden" name="form-name" value="fee-updates">
+    <input type="hidden" name="source" value="3d-print-cost-calculator">
+    <p style="display:none"><label>Website <input name="website"></label></p>
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Notify me</button>
+  </form>
+</div>
+
+<h2>More free calculators</h2>
+<div class="related">
+  <a href="/craft-pricing-calculator/">Handmade &amp; craft pricing calculator<span>Materials, labor, Etsy fees, wholesale, price test</span></a>
+  <a href="/candle-pricing-calculator/">Candle cost &amp; pricing calculator<span>Wax, fragrance load, jars, wicks and batch weights</span></a>
+  <a href="/#pricing">Pricing calculators for makers<span>Bakery, candles, laser, apparel, 3D printing</span></a>
+</div>
+</article>
+</main>
+
+<footer class="site"><div class="narrow">
+  <p><a href="https://www.etsy.com/shop/MarkupandCo" target="_blank" rel="noopener">Markup &amp; Co. on Etsy</a> &middot; <a href="/">Templates</a> &middot; <a href="/#calculators">Free calculators</a> &middot; <a href="/audit/">Website health audits</a></p>
+  <p>This calculator is an estimate from the numbers you enter and Etsy's published US seller fees as of November 2026. It is not financial or tax advice. Markup &amp; Co. is not affiliated with Etsy or any printer maker.</p>
+  <p>Built by Markup &amp; Co. with the help of AI tools. Every formula is tested before release.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var r2=function(n){return Math.round(n*100)/100};
+  var fmt=function(n){return (n<0?'-$':'$')+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})};
+  var num=function(id){var v=parseFloat($(id).value);return isNaN(v)?0:v};
+  var ETSY=0.095, FIXED=0.45;
+  function nice(p){var c=Math.ceil(p*2)/2;var cand=c-0.01;if(cand<p)cand=c+0.49;return cand;}
+  function mode(){
+    var resin=$('mode').value==='resin';
+    $('unit').textContent=resin?'ml':'g'; $('unit2').textContent=resin?'ml':'g';
+    $('mpl').textContent=resin?'Bottle price':'Spool price'; $('mql').textContent=resin?'Bottle size':'Spool weight';
+    calc();
+  }
+  function calc(){
+    var resin=$('mode').value==='resin', u=resin?'ml':'g';
+    var used=num('used'), hours=num('hours');
+    var pp=num('matqty')>0?num('matprice')/num('matqty'):0;
+    var mat=r2(used*pp), fail=r2(mat*num('fail')/100);
+    var wearhr=num('plife')>0?num('pprice')/num('plife'):0, wear=r2(hours*wearhr);
+    var upkeep=r2(hours*num('upkeep'));
+    var kwh=num('watts')/1000*hours, elec=r2(kwh*num('kwh'));
+    var hw=r2(num('hardware')), labor=r2(num('mins')/60*num('rate')), oh=r2(num('overhead'));
+    var cost=r2(mat+fail+wear+upkeep+elec+hw+labor+oh);
+    var mhr=wearhr+num('upkeep')+num('watts')/1000*num('kwh');
+    var m=num('margin')/100;
+    var direct=m<1?nice(cost/(1-m)):0;
+    var den=1-ETSY-m, etsy=den>0.05?nice((cost+FIXED)/den):0;
+    var whole=nice(cost/0.75);
+    var fees=r2(etsy*ETSY+FIXED), profit=r2(etsy-fees-cost);
+    $('cost').textContent=fmt(cost);
+    $('o_mat').textContent=fmt(mat); $('matnote').textContent='('+used+' '+u+' at '+fmt(pp)+'/'+u+')';
+    $('o_fail').textContent=fmt(fail); $('failnote').textContent='('+num('fail')+'%)';
+    $('o_wear').textContent=fmt(wear); $('wearnote').textContent='('+hours+' hr at '+fmt(wearhr)+'/hr)';
+    $('o_upkeep').textContent=fmt(upkeep);
+    $('o_elec').textContent=fmt(elec); $('elecnote').textContent='('+kwh.toFixed(2)+' kWh)';
+    $('o_hw').textContent=fmt(hw); $('o_labor').textContent=fmt(labor); $('labnote').textContent='('+num('mins')+' min)';
+    $('o_oh').textContent=fmt(oh); $('o_cost').textContent=fmt(cost); $('o_mhr').textContent=fmt(mhr);
+    $('m1').textContent=Math.round(m*100)+'%';
+    $('o_direct').textContent=direct?fmt(direct):'–';
+    $('o_etsy').textContent=etsy?fmt(etsy):'margin too high for Etsy fees';
+    $('o_whole').textContent=fmt(whole);
+    $('o_profit').textContent=etsy?fmt(profit)+' after '+fmt(fees)+' in fees':'–';
+    $('o_phr').textContent=etsy&&hours>0?fmt((profit+wear+upkeep+elec)/hours)+'/hr':'–';
+    $('note').textContent=hours>0&&used>0?'Material is '+Math.round((mat+fail)/cost*100)+'% of cost; printer time is '+Math.round((wear+upkeep+elec)/cost*100)+'%.':'';
+  }
+  $('mode').addEventListener('change',mode);
+  ['used','hours','matprice','matqty','fail','hardware','pprice','plife','watts','kwh','upkeep','mins','rate','overhead','margin'].forEach(function(id){$(id).addEventListener('input',calc)});
+  calc();
+})();
+</script>
+</body>
+</html>
