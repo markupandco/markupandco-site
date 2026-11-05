@@ -284,6 +284,24 @@ Direct sale at 40% margin: $6.06 &divide; 0.60 = $10.10, rounded to <strong>$10.
     <button type="submit">Notify me</button>
   </form>
 </div>
+<script>
+(function(){
+  var f=document.querySelector('form[name="fee-updates"]'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    if(f.dataset.ml) return;
+    e.preventDefault();
+    var fd=new FormData();
+    fd.append('fields[email]',f.email.value);
+    fd.append('fields[signup_page]',f.source.value);
+    fd.append('ml-submit','1'); fd.append('anticsrf','true');
+    var done=function(){ f.dataset.ml='1'; f.submit(); };
+    try{
+      fetch('https://assets.mailerlite.com/jsonp/2772222/forms/203321807865906215/subscribe',{method:'POST',body:fd}).then(done,done);
+      setTimeout(done,3000);
+    }catch(err){ done(); }
+  });
+})();
+</script>
 
 <h2>More free calculators</h2>
 <div class="related">
