@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
 Sitemap: https://markupandco.com/sitemap.xml
+
+User-agent: *
+Disallow: /assets/pins/
